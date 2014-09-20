@@ -13,6 +13,6 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([SpotAppDelegate class]));
+        return UIApplicationMain(argc, argv, @"UIApplicationNetworkActivityCounter", NSStringFromClass([SpotAppDelegate class]));
     }
 }

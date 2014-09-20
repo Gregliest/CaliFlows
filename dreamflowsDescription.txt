@@ -1,0 +1,18 @@
+California River Flows is an adaptation of Chris Shackleton's www.dreamflows.com for iPhone.  With an easy to use interface, and added functionality, California River Flows will keep you updated on the river flows for whitewater runs across the state of California.  Through this app, you can browse available gages and runs with numerous filtering options, and keep a list of your favorite runs, so that you can see what's running at a glance!
+
+Features:
+1) All of the California gages from Dreamflows grouped by region.  The gages are searchable, and sortable by flow level.  
+
+2) Links to all of the runs from a given gage, along with the flow graph from Dreamflows.
+
+3) For each run, links to descriptions and a link to the Dreamflows map
+
+4) A favorites tab, so you can see all of your favorite runs at a glance.  
+
+5) When adding to favorites, runs are searchable and sortable by flow level and difficulty, so you can easily find new runs in your skill range.   
+
+6) Runs added to favorites have the text of the decriptions cached for offline use.  Don't get caught at put-in with no service, wondering where the big rapid on the run is!  
+
+Special thanks to Chris Shackleton for his hard work aggregating all of this information for the boating community, and for his support of this adaptation of his work!
+
+Dreamflows, river flows, whitewater kayaking, whitewater rafting
