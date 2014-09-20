@@ -1,16 +1,8 @@
-//
-//  RunViewController.m
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/5/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import "RunViewController.h"
 #import "RunCollectionViewCell.h"
 #import "GCCustomSectionController.h"
 #import "SVWebViewController.h"
-#import "SpotAppDelegate.h"
+#import "DFAppDelegate.h"
 
 @interface RunViewController () 
 @property (weak, nonatomic) IBOutlet UILabel *flowLabel;
@@ -40,7 +32,7 @@
 
 - (IBAction)handleTap:(UITapGestureRecognizer *)sender {
     self.run.favorite = [[NSNumber alloc] initWithBool:![self.run.favorite boolValue]];
-    [(SpotAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
+    [(DFAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
     [self updateFavoriteButtonColor];
 }
 - (void)viewDidLoad

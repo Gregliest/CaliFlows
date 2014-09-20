@@ -1,11 +1,3 @@
-//
-//  RunViewController.h
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/5/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "Gage+Dreamflows.h"
 #import "Run+Dreamflows.h"

@@ -1,11 +1,3 @@
-//
-//  Gage.h
-//  Dreamflows
-//
-//  Created by Gregory Lee on 7/7/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 

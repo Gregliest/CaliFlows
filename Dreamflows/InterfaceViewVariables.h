@@ -1,11 +1,3 @@
-//
-//  InterfaceViewVariables.h
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/14/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 #define FONT_SIZE_SMALL 11

@@ -1,10 +1,3 @@
-//
-//  UIApplicationNetworkActivityCounter.m
-//  Spot
-//
-//  Created by Gregory Lee on 4/14/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
 //  Accurately keeps track of network activity across multiple threads.
 
 #import "UIApplicationNetworkActivityCounter.h"

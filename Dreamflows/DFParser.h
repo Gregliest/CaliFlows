@@ -1,11 +1,3 @@
-//
-//  DFParser.h
-//  Dreamflows
-//
-//  Created by Gregory Lee on 11/2/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 #define GAGE_NAME_KEY @"GageName"

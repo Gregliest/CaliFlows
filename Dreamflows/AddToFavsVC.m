@@ -1,11 +1,3 @@
-//
-//  AddToFavsVC.m
-//  Dreamflows
-//
-//  Created by Gregory Lee on 6/3/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import "AddToFavsVC.h"
 #import "DFDataController.h"
 #import "FilterModel.h"
@@ -13,7 +5,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "BackgroundLayer.h"
 #import "AddFavoritesCell.h"
-#import "SpotAppDelegate.h"
+#import "DFAppDelegate.h"
 
 @interface AddToFavsVC ()
 
@@ -219,7 +211,7 @@
         run = self.filteredRuns[indexPath.row];
     }
     run.favorite = [[NSNumber alloc] initWithBool:![run.favorite boolValue]];
-    [(SpotAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
+    [(DFAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
     [tableView reloadData];
 }
 

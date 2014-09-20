@@ -1,10 +1,3 @@
-//
-//  FilterModel.m
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/29/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
 //  This class serves as the model for an array of buttons that are used for filtering.  It assumes that there are groups of buttons, of which the first is the "any" button, which causes no filtering to take place for this group.  The rest of the buttons can be selected or not, independently of the others. This class then builds a predicate based on the selections in all of the groups of buttons.
 //  For instance, if there are two groups of buttons, class and flow, this class can take in the bool arrays corresponding to the button states, and build a predicate that, say, finds all class 3 and 4 runs that are flowing Low.  
 

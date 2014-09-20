@@ -1,11 +1,3 @@
-//
-//  AddFavoritesCell.h
-//  Dreamflows
-//
-//  Created by Gregory Lee on 6/4/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "LevelIndicatorView.h"
 @interface AddFavoritesCell : UITableViewCell

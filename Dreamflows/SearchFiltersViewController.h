@@ -1,11 +1,3 @@
-//
-//  SearchFiltersViewController.h
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/23/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "InterfaceViewVariables.h"
 #import "FilterModel.h"

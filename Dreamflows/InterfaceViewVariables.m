@@ -1,11 +1,3 @@
-//
-//  InterfaceViewVariables.m
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/14/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
-
 #import "InterfaceViewVariables.h"
 
 @implementation InterfaceViewVariables

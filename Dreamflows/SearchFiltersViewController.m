@@ -1,10 +1,3 @@
-//
-//  SearchFiltersViewController.m
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/23/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
 //  This class shows buttons to sort by class and flow.  It uses a FilterModel to store the user input and generate a predicate.
 
 #import "SearchFiltersViewController.h"

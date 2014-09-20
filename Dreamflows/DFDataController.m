@@ -1,10 +1,3 @@
-//
-//  DreamflowsFetcher.m
-//  Dreamflows
-//
-//  Created by Gregory Lee on 5/3/13.
-//  Copyright (c) 2013 Gregory Lee. All rights reserved.
-//
 //  Works in the following order:
 //  UpdateRuns - parseGages (sends runs finished notification)
 //      -> loadDesciptions - parseRunsAndAddToDatabase
@@ -13,7 +6,7 @@
 //  Instructions: Call updateRuns to update everything, updateFlows just to update flows on already loaded gages.
 
 #import "DFDataController.h"
-#import "SpotAppDelegate.h"
+#import "DFAppDelegate.h"
 #import <time.h>
 @interface DFDataController ()
 @property (atomic) BOOL updatingFlows;
@@ -71,7 +64,7 @@
 #pragma mark Database Methods
 -(NSManagedObjectContext *) managedContext {
     if(!_managedContext) {
-        _managedContext = [(SpotAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        _managedContext = [(DFAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
     return _managedContext;
 }
@@ -95,7 +88,7 @@
 {
     //Create a new managed object context
 	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
-    [context setPersistentStoreCoordinator:[(SpotAppDelegate *)[[UIApplication sharedApplication] delegate] persistentStoreCoordinator]];	//step 1
+    [context setPersistentStoreCoordinator:[(DFAppDelegate *)[[UIApplication sharedApplication] delegate] persistentStoreCoordinator]];	//step 1
     //Set the merge policy
 	[context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];				//step 2
 	[self.managedContext setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SpotAppDelegate.h"
+#import "DFAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, @"UIApplicationNetworkActivityCounter", NSStringFromClass([SpotAppDelegate class]));
+        return UIApplicationMain(argc, argv, @"UIApplicationNetworkActivityCounter", NSStringFromClass([DFAppDelegate class]));
     }
 }
