@@ -215,8 +215,8 @@
 		2F433D3C19CD365E00B3B374 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2F773109174F0F8E00915C13 /* SearchFiltersViewController.h */,
-				2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */,
+				2F902983176947EE00C5B1AF /* SplashScreenVC.h */,
+				2F902984176947EE00C5B1AF /* SplashScreenVC.m */,
 				2F817A3D1731E602005F88E2 /* GageTVC.h */,
 				2F817A3E1731E602005F88E2 /* GageTVC.m */,
 				2F817A4017324DBD005F88E2 /* GageViewController.h */,
@@ -225,10 +225,10 @@
 				2FD65C4A17377201001C9AFB /* RunViewController.m */,
 				2F73EC1B173B891200C73A9E /* FavoriteRunsTVC.h */,
 				2F73EC1C173B891200C73A9E /* FavoriteRunsTVC.m */,
-				2F902983176947EE00C5B1AF /* SplashScreenVC.h */,
-				2F902984176947EE00C5B1AF /* SplashScreenVC.m */,
 				2F656A46175D459B00405FD6 /* AddToFavsVC.h */,
 				2F656A47175D459B00405FD6 /* AddToFavsVC.m */,
+				2F773109174F0F8E00915C13 /* SearchFiltersViewController.h */,
+				2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

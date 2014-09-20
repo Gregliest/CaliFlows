@@ -20,6 +20,27 @@
 
 @implementation RunViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"Run Info"];
+    
+    [self updateLabels];
+    [self updateFavoriteButtonColor];
+    
+    //Add data notification handlers
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
+
+-(void)reloadData {
+    [self updateLabels];
+}
+
 -(void)setRun:(Run *)run {
     _run = run;
     self.gage = [Run getHighestGage:run];
@@ -35,28 +56,6 @@
     [(DFAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
     [self updateFavoriteButtonColor];
 }
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self setTitle:@"Run Info"];
-    
-    [self updateLabels];
-    [self updateFavoriteButtonColor];
-    
-    //Add data notification handlers
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
-}
-
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
--(void)reloadData {
-    [self updateLabels];
-    }
 
 -(void)updateFavoriteButtonColor {
     if([self.run.favorite boolValue]) {
@@ -67,6 +66,7 @@
         self.favorite.text =@"☆";
     }
 }
+
 -(void)updateLabels {
     //Set up labels with Run info
     [self.runLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_LARGE]];
@@ -84,8 +84,8 @@
     self.levelIndicator.color = [InterfaceViewVariables flowColors][self.gage.colorCode];
     
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         if (indexPath) {
@@ -105,14 +105,14 @@
         webController.availableActions = SVWebViewControllerAvailableActionsOpenInSafari | SVWebViewControllerAvailableActionsOpenInChrome | SVWebViewControllerAvailableActionsCopyLink | SVWebViewControllerAvailableActionsMailLink;
     }
 }
+
 #pragma mark Table View Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2; //Description, Map
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if (section == 0) {
         return ((NSArray *)self.run.descriptionsLinks).count;
@@ -126,8 +126,8 @@
     }*/
     return 0;
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return @"Description Links";
     }
@@ -140,8 +140,7 @@
     return @"";
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Link";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     

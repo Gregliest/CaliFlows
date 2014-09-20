@@ -9,6 +9,20 @@
 
 @implementation SearchFiltersViewController
 
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [InterfaceViewVariables HSBA:BACKGROUND_HSB];
+    // Do any additional setup after loading the view.
+    [self sortButtonCollections];
+    
+    [self updateButtonsFromModel];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 //Filtering complete.
 - (IBAction)doneButtonPressed:(UIBarButtonItem *)sender {
     [self.delegate filteringComplete:self withFilterModel: self.filterModel];
@@ -90,18 +104,6 @@
     [button setHighlighted:button.selected];
 }
 
-- (void) viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.view.backgroundColor = [InterfaceViewVariables HSBA:BACKGROUND_HSB];
-	// Do any additional setup after loading the view.
-    [self sortButtonCollections];
-    
-    [self updateButtonsFromModel];
-    
-    
-}
 /*
 - (BOOL)shouldAutorotate
 {
@@ -110,10 +112,6 @@
 
 - (NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 }
 
 //Makes sure the buttons are shown on screen in the correct order.  

@@ -10,7 +10,5 @@
 @end
 @interface SearchFiltersViewController : UIViewController
 @property (nonatomic, weak) id <SearchFiltersDelegate> delegate; //pointer to the delegate, so we can send the filter data.
-
-
 @property (strong, nonatomic) FilterModel * filterModel;
 @end

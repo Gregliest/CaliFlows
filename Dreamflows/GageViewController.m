@@ -12,13 +12,7 @@
 
 @implementation GageViewController
 
--(void)setGage:(Gage *)gage {
-    _gage = gage;
-    self.runs = [NSArray arrayWithArray:[gage.runsFromGage allObjects]];
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"Gage Info"];
     
@@ -39,6 +33,7 @@
     [super viewWillAppear:animated];
     [self.runTableView deselectRowAtIndexPath:[self.runTableView indexPathForSelectedRow] animated:animated];
 }
+
 - (void)refreshFromDatabase {
     self.gageLabel.text = self.gage.name;
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
@@ -53,8 +48,12 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+-(void)setGage:(Gage *)gage {
+    _gage = gage;
+    self.runs = [NSArray arrayWithArray:[gage.runsFromGage allObjects]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.runTableView indexPathForCell:sender];
         if (indexPath) {

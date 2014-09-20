@@ -6,5 +6,4 @@
 
 @interface GageViewController : UIViewController
 @property (strong, nonatomic) Gage * gage;
-
 @end

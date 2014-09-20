@@ -22,22 +22,7 @@
 
 @implementation AddToFavsVC
 
-- (NSArray*) gages {
-    if(!_runs || [_runs count] < 5) {
-        [self refresh];
-    }
-    return _runs;
-}
-
--(FilterModel *)filterModel {
-    if(!_filterModel) {
-        _filterModel = [[FilterModel alloc] initWithFields:FIELD1ForRun field2:FIELD2ForRun];
-    }
-    return _filterModel;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     //NSLog(@"Begin");
     
@@ -76,8 +61,21 @@
     [self.tableView reloadData];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (NSArray*) gages {
+    if(!_runs || [_runs count] < 5) {
+        [self refresh];
+    }
+    return _runs;
+}
+
+-(FilterModel *)filterModel {
+    if(!_filterModel) {
+        _filterModel = [[FilterModel alloc] initWithFields:FIELD1ForRun field2:FIELD2ForRun];
+    }
+    return _filterModel;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"Search Filters Segue"]){
         SearchFiltersViewController * SFVC = segue.destinationViewController;
         SFVC.delegate = self;
@@ -131,14 +129,12 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.searchedRuns count];
@@ -148,8 +144,7 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"RunFav";
     UITableViewCell *rawCell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -184,8 +179,7 @@
 
 //Needed to override this for the searchDisplayController.  This is a hack...  
 #define CELL_HEIGHT 58
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return CELL_HEIGHT;
 }
 
@@ -202,8 +196,7 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Run *run;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         run = self.searchedRuns[indexPath.row];

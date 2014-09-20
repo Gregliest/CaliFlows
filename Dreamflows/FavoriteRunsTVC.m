@@ -9,8 +9,7 @@
 
 @implementation FavoriteRunsTVC
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Favorite Runs";
     if(!self.dfFetcher) {

@@ -3,16 +3,11 @@
 
 @interface SplashScreenVC ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
-
-
 @end
 
 @implementation SplashScreenVC
 
-
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.continueButton.layer.cornerRadius = 8;
     
@@ -20,7 +15,8 @@
     [dfFetcher updateGages];
 }
 
-- (NSUInteger)supportedInterfaceOrientations{
+- (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
 }
+
 @end

@@ -22,41 +22,6 @@
 
 @implementation GageTVC
 
--(FilterModel *)filterModel {
-    if(!_filterModel) {
-        _filterModel = [[FilterModel alloc] initWithFields:FIELD1ForGage field2:FIELD2ForGage];
-    }
-    return _filterModel;
-}
-
--(NSMutableDictionary *)gagesByRegion {
-    if(!_gagesByRegion) {
-        _gagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
-    }
-    return _gagesByRegion;
-}
-
--(NSMutableDictionary *) filteredGagesByRegion {
-    if(!_filteredGagesByRegion) {
-        _filteredGagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
-    }
-    return _filteredGagesByRegion;
-}
-
--(NSArray *) regions {
-    if(!_regions) {
-        _regions = [self updateRegions];
-    }
-    return _regions;
-}
-
--(DFDataController *) dfFetcher {
-    if(!_dfFetcher) {
-        _dfFetcher = [DFDataController sharedManager];
-    }
-    return _dfFetcher;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -107,6 +72,7 @@
     [self refreshFromDatabase];
     
 }
+
 - (IBAction)goToSearch:(UIBarButtonItem *)sender {
     [self.searchBar becomeFirstResponder];
 }
@@ -134,6 +100,40 @@
     NSLog(@"Refreshed from database");
 }
 
+-(FilterModel *)filterModel {
+    if(!_filterModel) {
+        _filterModel = [[FilterModel alloc] initWithFields:FIELD1ForGage field2:FIELD2ForGage];
+    }
+    return _filterModel;
+}
+
+-(NSMutableDictionary *)gagesByRegion {
+    if(!_gagesByRegion) {
+        _gagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
+    }
+    return _gagesByRegion;
+}
+
+-(NSMutableDictionary *) filteredGagesByRegion {
+    if(!_filteredGagesByRegion) {
+        _filteredGagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
+    }
+    return _filteredGagesByRegion;
+}
+
+-(NSArray *) regions {
+    if(!_regions) {
+        _regions = [self updateRegions];
+    }
+    return _regions;
+}
+
+-(DFDataController *) dfFetcher {
+    if(!_dfFetcher) {
+        _dfFetcher = [DFDataController sharedManager];
+    }
+    return _dfFetcher;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([sender isKindOfClass:[UITableViewCell class]]) {
@@ -159,7 +159,6 @@
         }
     } 
 }
-
 
 -(void)updateGages {
     for(NSString * region in self.regions) {
@@ -193,6 +192,7 @@
 }
 
 #pragma mark - Search Bar delegate and data source
+
 -(void) filter:(NSString *) searchText withScope:(NSString *)scope {
     //[self.filteredGages removeAllObjects];
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
@@ -212,10 +212,13 @@
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     
 }
+
 #pragma mark - Table view data source
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(self.regions.count > section) {
         return self.regions[section];
