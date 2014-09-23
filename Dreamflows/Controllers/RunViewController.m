@@ -1,6 +1,4 @@
 #import "RunViewController.h"
-#import "RunCollectionViewCell.h"
-#import "GCCustomSectionController.h"
 #import "SVWebViewController.h"
 #import "DFAppDelegate.h"
 

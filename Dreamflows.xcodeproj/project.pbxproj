@@ -16,6 +16,7 @@
 		2F136F3017456FC500F8F7AE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F136F2F17456FC500F8F7AE /* MessageUI.framework */; };
 		2F136F331746D49200F8F7AE /* LevelIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F136F321746D49200F8F7AE /* LevelIndicatorView.m */; };
 		2F2A086618A35583002CE88B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A086518A35583002CE88B /* Images.xcassets */; };
+		2F2C4AB419D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2C4AB219D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard */; };
 		2F4B4C86178A088900BB7D66 /* Gage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C85178A088900BB7D66 /* Gage.m */; };
 		2F4B4C89178A088A00BB7D66 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C88178A088A00BB7D66 /* Run.m */; };
 		2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A47175D459B00405FD6 /* AddToFavsVC.m */; };
@@ -36,7 +37,6 @@
 		2F817A001731E2EA005F88E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8179FF1731E2EA005F88E2 /* UIKit.framework */; };
 		2F817A021731E2EA005F88E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F817A011731E2EA005F88E2 /* Foundation.framework */; };
 		2F817A041731E2EA005F88E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F817A031731E2EA005F88E2 /* CoreGraphics.framework */; };
-		2F817A0A1731E2EA005F88E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F817A081731E2EA005F88E2 /* InfoPlist.strings */; };
 		2F817A0C1731E2EA005F88E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F817A0B1731E2EA005F88E2 /* main.m */; };
 		2F817A101731E2EA005F88E2 /* DFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F817A0F1731E2EA005F88E2 /* DFAppDelegate.m */; };
 		2F817A271731E2EB005F88E2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F817A261731E2EB005F88E2 /* SenTestingKit.framework */; };
@@ -51,7 +51,6 @@
 		2F9029D6176EE77900C5B1AF /* kayak_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029D5176EE77800C5B1AF /* kayak_57.png */; };
 		2F9029D8176EE78C00C5B1AF /* kayak_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029D7176EE78B00C5B1AF /* kayak_114.png */; };
 		2F9884F91826149E000C561F /* DFParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9884F81826149E000C561F /* DFParser.m */; };
-		2FAE79D618A34AF5004E7028 /* MainStoryboard_iPhone_1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF79C05173708F300611AFF /* MainStoryboard_iPhone_1.storyboard */; };
 		2FB12BCA1742BF6200414268 /* InterfaceViewVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB12BC91742BF6200414268 /* InterfaceViewVariables.m */; };
 		2FC58F8D1756EDB1003968E4 /* FilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC58F8C1756EDB1003968E4 /* FilterModel.m */; };
 		2FD65C4B17377201001C9AFB /* RunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD65C4A17377201001C9AFB /* RunViewController.m */; };
@@ -79,7 +78,7 @@
 /* Begin PBXFileReference section */
 		2F07661F174AFED20091D62D /* UIApplicationNetworkActivityCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplicationNetworkActivityCounter.h; sourceTree = "<group>"; };
 		2F076620174AFED20091D62D /* UIApplicationNetworkActivityCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationNetworkActivityCounter.m; sourceTree = "<group>"; };
-		2F076628174B3A360091D62D /* Graph-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Graph-icon.png"; path = "../../Graph-icon.png"; sourceTree = "<group>"; };
+		2F076628174B3A360091D62D /* Graph-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graph-icon.png"; sourceTree = "<group>"; };
 		2F136F1F17456EAC00F8F7AE /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
 		2F136F2017456EAC00F8F7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
 		2F136F2117456EAC00F8F7AE /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-ES"; path = "es-ES.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		2F136F311746D49000F8F7AE /* LevelIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelIndicatorView.h; sourceTree = "<group>"; };
 		2F136F321746D49200F8F7AE /* LevelIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelIndicatorView.m; sourceTree = "<group>"; };
 		2F2A086518A35583002CE88B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CaliFlows/Images.xcassets; sourceTree = "<group>"; };
+		2F2C4AB319D1DAEE008C19EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone_1.storyboard; sourceTree = "<group>"; };
 		2F4B4C84178A088900BB7D66 /* Gage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gage.h; sourceTree = "<group>"; };
 		2F4B4C85178A088900BB7D66 /* Gage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gage.m; sourceTree = "<group>"; };
 		2F4B4C87178A088A00BB7D66 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
@@ -125,7 +125,6 @@
 		2F817A011731E2EA005F88E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2F817A031731E2EA005F88E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2F817A071731E2EA005F88E2 /* Dreamflows-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dreamflows-Info.plist"; sourceTree = "<group>"; };
-		2F817A091731E2EA005F88E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F817A0B1731E2EA005F88E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F817A0D1731E2EA005F88E2 /* Dreamflows-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dreamflows-Prefix.pch"; sourceTree = "<group>"; };
 		2F817A0E1731E2EA005F88E2 /* DFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFAppDelegate.h; sourceTree = "<group>"; };
@@ -140,11 +139,11 @@
 		2F817A3E1731E602005F88E2 /* GageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GageTVC.m; sourceTree = "<group>"; };
 		2F817A4017324DBD005F88E2 /* GageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GageViewController.h; sourceTree = "<group>"; };
 		2F817A4117324DBD005F88E2 /* GageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GageViewController.m; sourceTree = "<group>"; };
-		2F9029811769334300C5B1AF /* 20130511-Kaweah-138.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "20130511-Kaweah-138.jpg"; path = "../20130511-Kaweah-138.jpg"; sourceTree = "<group>"; };
+		2F9029811769334300C5B1AF /* 20130511-Kaweah-138.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20130511-Kaweah-138.jpg"; sourceTree = "<group>"; };
 		2F902983176947EE00C5B1AF /* SplashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenVC.h; sourceTree = "<group>"; };
 		2F902984176947EE00C5B1AF /* SplashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenVC.m; sourceTree = "<group>"; };
-		2F9029D5176EE77800C5B1AF /* kayak_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kayak_57.png; path = ../../kayak_57.png; sourceTree = "<group>"; };
-		2F9029D7176EE78B00C5B1AF /* kayak_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kayak_114.png; path = ../../kayak_114.png; sourceTree = "<group>"; };
+		2F9029D5176EE77800C5B1AF /* kayak_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kayak_57.png; sourceTree = "<group>"; };
+		2F9029D7176EE78B00C5B1AF /* kayak_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kayak_114.png; sourceTree = "<group>"; };
 		2F9172D91875375F0073AB7F /* CaliFlows copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CaliFlows copy-Info.plist"; path = "/Users/gregorylee/Documents/Iphone/Dreamflows/CaliFlows copy-Info.plist"; sourceTree = "<absolute>"; };
 		2F9884F71826149E000C561F /* DFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFParser.h; sourceTree = "<group>"; };
 		2F9884F81826149E000C561F /* DFParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFParser.m; sourceTree = "<group>"; };
@@ -157,9 +156,9 @@
 		2FD65C4A17377201001C9AFB /* RunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunViewController.m; sourceTree = "<group>"; };
 		2FD65C4F17382F34001C9AFB /* GageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GageCell.h; sourceTree = "<group>"; };
 		2FD65C5017382F34001C9AFB /* GageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GageCell.m; sourceTree = "<group>"; };
-		2FEF424E176EFA67003459A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Images/Default.png; sourceTree = "<group>"; };
-		2FEF4250176EFA6D003459A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Images/Default@2x.png"; sourceTree = "<group>"; };
-		2FEF4252176EFA74003459A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		2FEF424E176EFA67003459A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2FEF4250176EFA6D003459A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2FEF4252176EFA74003459A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2FF2AFCD17342C8E005E5E70 /* DFDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDataController.h; sourceTree = "<group>"; };
 		2FF2AFCE17342C8E005E5E70 /* DFDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFDataController.m; sourceTree = "<group>"; };
 		2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamflowsModel.xcdatamodel; sourceTree = "<group>"; };
@@ -168,7 +167,6 @@
 		2FF2B02F17347FBB005E5E70 /* Run+Dreamflows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Run+Dreamflows.h"; sourceTree = "<group>"; };
 		2FF2B03017347FBB005E5E70 /* Run+Dreamflows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Run+Dreamflows.m"; sourceTree = "<group>"; };
 		2FF2B03217358BE5005E5E70 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		2FF79C06173708F300611AFF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Dreamflows/en.lproj/MainStoryboard_iPhone_1.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,13 +228,13 @@
 				2F773109174F0F8E00915C13 /* SearchFiltersViewController.h */,
 				2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		2F433D3D19CD368300B3B374 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2FF79C05173708F300611AFF /* MainStoryboard_iPhone_1.storyboard */,
+				2F2C4AB219D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard */,
 				2FD65C4F17382F34001C9AFB /* GageCell.h */,
 				2FD65C5017382F34001C9AFB /* GageCell.m */,
 				2F656A49175DE74300405FD6 /* AddFavoritesCell.h */,
@@ -250,7 +248,7 @@
 				2F07661F174AFED20091D62D /* UIApplicationNetworkActivityCounter.h */,
 				2F076620174AFED20091D62D /* UIApplicationNetworkActivityCounter.m */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2F73EC7B173C892000C73A9E /* Assets */ = {
@@ -272,8 +270,7 @@
 				2F73EC82173C892000C73A9E /* UpAccessoryWhite.png */,
 				2F73EC83173C892000C73A9E /* UpAccessoryWhite@2x.png */,
 			);
-			name = Assets;
-			path = Images;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		2F8179F31731E2EA005F88E2 = {
@@ -337,11 +334,10 @@
 			children = (
 				2FD027C51760684E00B3FFF4 /* Dreamflows.entitlements */,
 				2F817A071731E2EA005F88E2 /* Dreamflows-Info.plist */,
-				2F817A081731E2EA005F88E2 /* InfoPlist.strings */,
 				2F817A0B1731E2EA005F88E2 /* main.m */,
 				2F817A0D1731E2EA005F88E2 /* Dreamflows-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2F817A2C1731E2EB005F88E2 /* DreamflowsTests */ = {
@@ -360,14 +356,14 @@
 				2F817A2E1731E2EB005F88E2 /* DreamflowsTests-Info.plist */,
 				2F817A2F1731E2EB005F88E2 /* InfoPlist.strings */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2FAE79DA18A34BCD004E7028 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = iPad;
+			path = iPad;
 			sourceTree = "<group>";
 		};
 		2FD65C58173880CF001C9AFB /* Models */ = {
@@ -385,7 +381,7 @@
 				2FF2B02F17347FBB005E5E70 /* Run+Dreamflows.h */,
 				2FF2B03017347FBB005E5E70 /* Run+Dreamflows.m */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +431,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Spot;
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Gregory Lee";
 				TargetAttributes = {
@@ -472,12 +469,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F817A0A1731E2EA005F88E2 /* InfoPlist.strings in Resources */,
 				2F2A086618A35583002CE88B /* Images.xcassets in Resources */,
 				2F73EC86173C892000C73A9E /* DownAccessory.png in Resources */,
 				2F73EC87173C892000C73A9E /* DownAccessory@2x.png in Resources */,
 				2F73EC88173C892000C73A9E /* DownAccessoryWhite.png in Resources */,
-				2FAE79D618A34AF5004E7028 /* MainStoryboard_iPhone_1.storyboard in Resources */,
+				2F2C4AB419D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard in Resources */,
 				2F73EC89173C892000C73A9E /* DownAccessoryWhite@2x.png in Resources */,
 				2F73EC8A173C892000C73A9E /* UpAccessory.png in Resources */,
 				2F73EC8B173C892000C73A9E /* UpAccessory@2x.png in Resources */,
@@ -600,12 +596,12 @@
 			name = SVWebViewController.strings;
 			sourceTree = "<group>";
 		};
-		2F817A081731E2EA005F88E2 /* InfoPlist.strings */ = {
+		2F2C4AB219D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2F817A091731E2EA005F88E2 /* en */,
+				2F2C4AB319D1DAEE008C19EF /* en */,
 			);
-			name = InfoPlist.strings;
+			name = MainStoryboard_iPhone_1.storyboard;
 			sourceTree = "<group>";
 		};
 		2F817A2F1731E2EB005F88E2 /* InfoPlist.strings */ = {
@@ -614,15 +610,6 @@
 				2F817A301731E2EB005F88E2 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2FF79C05173708F300611AFF /* MainStoryboard_iPhone_1.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FF79C06173708F300611AFF /* en */,
-			);
-			name = MainStoryboard_iPhone_1.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -704,8 +691,8 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dreamflows/Dreamflows-Prefix.pch";
-				INFOPLIST_FILE = "Dreamflows/Dreamflows-Info.plist";
+				GCC_PREFIX_HEADER = "Dreamflows/Supporting Files/Dreamflows-Prefix.pch";
+				INFOPLIST_FILE = "Dreamflows/Supporting Files/Dreamflows-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8BBF15E8-7D63-4D63-BACC-F34DD48EC8BD";
@@ -726,8 +713,8 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dreamflows/Dreamflows-Prefix.pch";
-				INFOPLIST_FILE = "Dreamflows/Dreamflows-Info.plist";
+				GCC_PREFIX_HEADER = "Dreamflows/Supporting Files/Dreamflows-Prefix.pch";
+				INFOPLIST_FILE = "Dreamflows/Supporting Files/Dreamflows-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8BBF15E8-7D63-4D63-BACC-F34DD48EC8BD";
@@ -745,8 +732,8 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dreamflows/Dreamflows-Prefix.pch";
-				INFOPLIST_FILE = "DreamflowsTests/DreamflowsTests-Info.plist";
+				GCC_PREFIX_HEADER = "Dreamflows/Supporting Files/Dreamflows-Prefix.pch";
+				INFOPLIST_FILE = "DreamflowsTests/Supporting Files/DreamflowsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -762,8 +749,8 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dreamflows/Dreamflows-Prefix.pch";
-				INFOPLIST_FILE = "DreamflowsTests/DreamflowsTests-Info.plist";
+				GCC_PREFIX_HEADER = "Dreamflows/Supporting Files/Dreamflows-Prefix.pch";
+				INFOPLIST_FILE = "DreamflowsTests/Supporting Files/DreamflowsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -810,7 +797,7 @@
 			);
 			currentVersion = 2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */;
 			path = DreamflowsModel.xcdatamodeld;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

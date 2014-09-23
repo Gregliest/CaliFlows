@@ -4,7 +4,6 @@
 #import "InterfaceViewVariables.h"
 #import "LevelIndicatorView.h"
 #import "DFDataController.h"
-#import "WebViewController.h"
 
 @interface RunViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic)Run * run;
