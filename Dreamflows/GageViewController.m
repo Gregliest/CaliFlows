@@ -14,27 +14,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"Gage Info"];
     
+    [self setTitle:@"Gage Info"];
+    [self setupView];
+    [self refreshView];
+    
+    //Add data notification handlers
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.runTableView deselectRowAtIndexPath:[self.runTableView indexPathForSelectedRow] animated:animated];
+}
+
+- (void)setupView {
     [self.gageLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_LARGE]];
     self.gageLabel.textColor = [InterfaceViewVariables HSBA:TITLE_HSB];
     [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_MEDIUM]];
     [self.timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
     self.levelIndicator.radiusRatio = BIG_RADIUS_RATIO;
-    
-    [self refreshFromDatabase];
-    
-    //Add data notification handlers
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFromDatabase) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFromDatabase) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.runTableView deselectRowAtIndexPath:[self.runTableView indexPathForSelectedRow] animated:animated];
-}
-
-- (void)refreshFromDatabase {
+- (void)refreshView {
     self.gageLabel.text = self.gage.name;
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
     self.timeLabel.text = self.gage.dateFlowUpdate;
@@ -48,6 +51,7 @@
     }
 }
 
+#warning todo this should update the view. 
 -(void)setGage:(Gage *)gage {
     _gage = gage;
     self.runs = [NSArray arrayWithArray:[gage.runsFromGage allObjects]];
@@ -73,18 +77,10 @@
     }
 }
 
-/*
-- (IBAction)presentGraphModally:(UIButton *)sender {
-    NSURL *URL = [NSURL URLWithString:self.gage.graphLink];
-	SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithURL:URL];
-	webViewController.modalPresentationStyle = UIModalPresentationPageSheet;
-    webViewController.availableActions = SVWebViewControllerAvailableActionsOpenInSafari | SVWebViewControllerAvailableActionsOpenInChrome | SVWebViewControllerAvailableActionsCopyLink | SVWebViewControllerAvailableActionsMailLink;
-	[self presentViewController:webViewController animated:YES completion:NULL];
-}*/
+# pragma mark - Table View Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [self.runs count];
 }
 

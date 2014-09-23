@@ -12,7 +12,6 @@
     return [[NSArray alloc] initWithObjects:@"FlowNa", @"FlowFz",@"FlowLo",@"FlowOk",@"FlowPf",@"FlowHi", nil];
 }
 
-
 + (UIColor *) RGBA:(int)red green:(int)green blue:(int)blue alpha:(float)alpha {
     return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
 }

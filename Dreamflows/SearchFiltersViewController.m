@@ -75,24 +75,26 @@
 -(void)highLightButtons: (UIButton *) button {
     [self performSelector:@selector(highlight:) withObject:button afterDelay:0];
     
-    //This is why this should be in a UICollectionView
     NSArray *buttonCollection;
     if([self.classButtons containsObject:button]) {
         buttonCollection = self.classButtons;
     } else if ([self.flowButtons containsObject:button]) {
         buttonCollection = self.flowButtons;
+    } else {
+        return;
     }
-    int index = [buttonCollection indexOfObject:button];
+    
+    NSUInteger index = [buttonCollection indexOfObject:button];
+    //If the any button has been selected, clear all other selections.
     if(index == 0) {
         for(int i = 1; i < buttonCollection.count; i++) {
             UIButton *thisButton = buttonCollection[i];
             thisButton.selected = NO;
             [self performSelector:@selector(highlight:) withObject:thisButton afterDelay:0];
         }
-    } else if (index < 0) {
-        NSLog(@"Error in SearchFiltersViewController, buttonPressed, index less than 0");
+    //Else something else has been selected, so clear the any button.
     } else {
-        UIButton * anyButton = buttonCollection[0];
+        UIButton *anyButton = buttonCollection[0];
         anyButton.selected = NO;
         [self performSelector:@selector(highlight:) withObject:anyButton afterDelay:0];
     }
@@ -103,12 +105,6 @@
 -(void)highlight:(UIButton *) button {
     [button setHighlighted:button.selected];
 }
-
-/*
-- (BOOL)shouldAutorotate
-{
-    return NO;
-}*/
 
 - (NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
@@ -126,6 +122,5 @@
     self.classButtons = [self.classButtons sortedArrayUsingComparator:compareTags];
     self.flowButtons = [self.flowButtons sortedArrayUsingComparator:compareTags];
 }
-
 
 @end

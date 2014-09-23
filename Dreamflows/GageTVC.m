@@ -28,14 +28,12 @@
     if (!self.title) self.title = @"Dreamflows Gages";
     
     //Search bar
-    //self.searchBar = [[UISearchBar alloc] init];
     self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
     self.searchController.delegate = self;
     self.searchController.searchResultsDataSource = self;
     self.searchController.searchResultsDelegate = self;
     self.segmentedControlBackgroundView.layer.borderWidth = .25f;
     self.segmentedControlBackgroundView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    
     
     //Tab bars
     self.tabBarItem =[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0];
@@ -54,8 +52,8 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [self.dfFetcher updateFlows];
     [self refreshFromDatabase];
-    [self refresh];
 }
 
 - (IBAction)selectedSegmentChanged:(UISegmentedControl *)sender {
@@ -77,62 +75,39 @@
     [self.searchBar becomeFirstResponder];
 }
 
-- (IBAction)refresh {
-    NSLog(@"Refresh");
-    [self.dfFetcher updateFlows]; //Start the model updating, it will send a notification back when it is done.  Or, if it has updated recently, this will do nothing.
-    
-//    if(self.dfFetcher.isUpdating && self.gages.count == 0) {
-//        [self.loadingIndicator startAnimating];
-//    } else {
-//        [self.loadingIndicator stopAnimating];
-//    }
-}
-
 - (void)refreshFromDatabase {
     NSLog(@"Refreshing from database");
     NSFetchRequest * request = [[NSFetchRequest alloc] initWithEntityName:@"Gage"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sortNumber" ascending:YES]];
     self.gages = [self.dfFetcher getEntries:request];
-    self.regions = [self updateRegions];
+    self.regions = [self getRegions];
     [self updateGages];
     [self.tableView reloadData];
 //    [self.loadingIndicator stopAnimating];
     NSLog(@"Refreshed from database");
 }
 
--(FilterModel *)filterModel {
-    if(!_filterModel) {
-        _filterModel = [[FilterModel alloc] initWithFields:FIELD1ForGage field2:FIELD2ForGage];
+-(void)updateGages {
+    for(NSString * region in self.regions) {
+        NSFetchRequest * request = [[NSFetchRequest alloc] initWithEntityName:@"Gage"];
+        request.predicate = [NSPredicate predicateWithFormat:@"region contains[c] %@", region];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sortNumber" ascending:YES]];
+        NSArray *tempArray =[self.dfFetcher getEntries:request];
+        [self.gagesByRegion setObject:tempArray forKey:region];
+        NSArray *tempFilteredArray = [self filterArray:tempArray];
+        [self.filteredGagesByRegion setObject:tempFilteredArray forKey:region];
     }
-    return _filterModel;
+    [self.tableView reloadData];
 }
 
--(NSMutableDictionary *)gagesByRegion {
-    if(!_gagesByRegion) {
-        _gagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
+-(NSArray *)getRegions {
+    NSMutableArray * temp = [[NSMutableArray alloc] initWithCapacity:10];
+    for(Gage * gage in self.gages) {
+        if(gage.region && ![temp containsObject:gage.region]) {//If region have been added to database and temp does not contain the region. 
+            [temp addObject:gage.region];
+        }
     }
-    return _gagesByRegion;
-}
-
--(NSMutableDictionary *) filteredGagesByRegion {
-    if(!_filteredGagesByRegion) {
-        _filteredGagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
-    }
-    return _filteredGagesByRegion;
-}
-
--(NSArray *) regions {
-    if(!_regions) {
-        _regions = [self updateRegions];
-    }
-    return _regions;
-}
-
--(DFDataController *) dfFetcher {
-    if(!_dfFetcher) {
-        _dfFetcher = [DFDataController sharedManager];
-    }
-    return _dfFetcher;
+    return temp;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -155,32 +130,46 @@
                     }
                     [segue.destinationViewController performSelector:@selector(setGage:) withObject:thisGage];
                 }
-            } 
-        }
-    } 
-}
-
--(void)updateGages {
-    for(NSString * region in self.regions) {
-        NSFetchRequest * request = [[NSFetchRequest alloc] initWithEntityName:@"Gage"];
-        request.predicate = [NSPredicate predicateWithFormat:@"region contains[c] %@", region];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sortNumber" ascending:YES]];
-        NSArray *tempArray =[self.dfFetcher getEntries:request];
-        [self.gagesByRegion setObject:tempArray forKey:region];
-        NSArray *tempFilteredArray = [self filterArray:tempArray];
-        [self.filteredGagesByRegion setObject:tempFilteredArray forKey:region];
-    }
-    [self.tableView reloadData];
-}
-
--(NSArray *) updateRegions {
-    NSMutableArray * temp = [[NSMutableArray alloc] initWithCapacity:10];
-    for(Gage * gage in self.gages) {
-        if(gage.region && ![temp containsObject:gage.region]) {//If region have been added to database and temp does not contain the region. 
-            [temp addObject:gage.region];
+            }
         }
     }
-    return temp;
+}
+
+#pragma mark - Getters
+
+-(FilterModel *)filterModel {
+    if(!_filterModel) {
+        _filterModel = [[FilterModel alloc] initWithFields:FIELD1ForGage field2:FIELD2ForGage];
+    }
+    return _filterModel;
+}
+
+-(NSMutableDictionary *)gagesByRegion {
+    if(!_gagesByRegion) {
+        _gagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
+    }
+    return _gagesByRegion;
+}
+
+-(NSMutableDictionary *)filteredGagesByRegion {
+    if(!_filteredGagesByRegion) {
+        _filteredGagesByRegion = [[NSMutableDictionary alloc] initWithCapacity:self.regions.count];
+    }
+    return _filteredGagesByRegion;
+}
+
+-(NSArray *)regions {
+    if(!_regions) {
+        _regions = [self getRegions];
+    }
+    return _regions;
+}
+
+-(DFDataController *) dfFetcher {
+    if(!_dfFetcher) {
+        _dfFetcher = [DFDataController sharedManager];
+    }
+    return _dfFetcher;
 }
 
 -(NSArray *)filterArray:(NSArray *) array {
@@ -228,8 +217,6 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return 1;
     } else {
@@ -238,7 +225,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.searchedGages count];
     } else {
@@ -248,12 +234,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Gage";
-    UITableViewCell *rawCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];// forIndexPath:indexPath
+    UITableViewCell *rawCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if ( rawCell == nil ) {
         rawCell = (GageCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         [rawCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-        
-        //rawCell = [[GageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     Gage * gage =nil;
@@ -266,31 +250,11 @@
     
     if([rawCell isKindOfClass:[GageCell class]]) {
         GageCell * cell = (GageCell *) rawCell;
-        
-        cell.gageName.textColor = [InterfaceViewVariables HSBA:TITLE_HSB];
-        [cell.gageName setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_MEDIUM]];
-        cell.gageName.text = gage.name;
-        cell.gageProperties.textColor = [UIColor grayColor];//[GageTVC flowColors][gage[@"ColorCode"]];
-        [cell.gageProperties setFont:[UIFont systemFontOfSize:FONT_SIZE_SMALL]];
-         cell.gageProperties.alpha = .7;
-        cell.gageProperties.text = [NSString stringWithFormat:@"%@ %@", gage.flow, gage.flowUnit];
-        cell.levelIndicator.color =[InterfaceViewVariables flowColors][gage.colorCode];
+        [cell updateWithGage:gage];
         return cell;
     }
     
     return nil;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 @end

@@ -11,7 +11,8 @@
     [super viewDidLoad];
     self.continueButton.layer.cornerRadius = 8;
     
-    DFDataController *dfFetcher = [DFDataController sharedManager]; //Start the updating process
+    //Start the updating process
+    DFDataController *dfFetcher = [DFDataController sharedManager];
     [dfFetcher updateGages];
 }
 

@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NSLog(@"Begin");
     
     self.title = @"Add Favorites";
     if(!self.dfFetcher) {
@@ -80,7 +79,6 @@
         SearchFiltersViewController * SFVC = segue.destinationViewController;
         SFVC.delegate = self;
         SFVC.filterModel = self.filterModel;
-        
     }
 }
 
@@ -100,6 +98,7 @@
 }
 
 #pragma mark - Search Bar delegate and data source
+
 -(void) filter:(NSString *) searchText withScope:(NSString *)scope {
     //[self.filteredGages removeAllObjects];
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"longName contains[c] %@", searchText];
@@ -118,13 +117,6 @@
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
     // Return YES to cause the search result table view to be reloaded.
     return YES;
-}
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    
-    /*
-    CGRect newBounds = self.tableView.bounds;
-    newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
-    self.tableView.bounds = newBounds; */
 }
 
 #pragma mark - Table view data source
@@ -157,20 +149,7 @@
     
     if([rawCell isKindOfClass:[AddFavoritesCell class]]) {
         AddFavoritesCell *cell = (AddFavoritesCell *) rawCell;
-        
-        cell.runName.textColor = [UIColor blackColor];
-        [cell.runName setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_MEDIUM]];
-        cell.runName.text = run.runName;
-        cell.runProperties.textColor = [UIColor grayColor];
-        [cell.runProperties setFont:[UIFont systemFontOfSize:FONT_SIZE_SMALL]];
-        cell.runProperties.alpha = .7;
-        cell.runProperties.text = run.lengthClass;
-        
-        cell.levelIndicator.color =[InterfaceViewVariables flowColors][run.bestGage.colorCode];
-        cell.favoriteStar = [self setFavoriteButtonColor:cell.favoriteStar withRun:run];
-        cell.riverName.textColor = [UIColor blackColor];
-        [cell.riverName setFont:[UIFont systemFontOfSize:FONT_SIZE_SMALL]];
-        cell.riverName.text = run.riverName;
+        [cell updateWithRun:run];
         return cell;
     }
     
@@ -181,17 +160,6 @@
 #define CELL_HEIGHT 58
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return CELL_HEIGHT;
-}
-
--(UILabel *)setFavoriteButtonColor:(UILabel *)favoriteLabel withRun:(Run *)run {
-    if([run.favorite boolValue]) {
-        favoriteLabel.textColor = [InterfaceViewVariables HSBA:FAVORITES_HSB];
-        favoriteLabel.text =@"★";
-    } else {
-        favoriteLabel.textColor = [UIColor blackColor];
-        favoriteLabel.text =@"☆";
-    }
-    return favoriteLabel;
 }
 
 #pragma mark - Table view delegate
