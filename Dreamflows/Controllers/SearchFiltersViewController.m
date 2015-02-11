@@ -12,7 +12,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [InterfaceViewVariables HSBA:BACKGROUND_HSB];
+    self.view.backgroundColor = [InterfaceViewVariables backgroundColor];
     // Do any additional setup after loading the view.
     [self sortButtonCollections];
     

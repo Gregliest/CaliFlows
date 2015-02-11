@@ -57,7 +57,7 @@
 
 -(void)updateFavoriteButtonColor {
     if([self.run.favorite boolValue]) {
-        self.favorite.textColor = [InterfaceViewVariables HSBA:FAVORITES_HSB];
+        self.favorite.textColor = [InterfaceViewVariables favoritesColor];
         self.favorite.text =@"★";
     } else {
         self.favorite.textColor = [UIColor blackColor];
@@ -68,15 +68,18 @@
 -(void)updateLabels {
     //Set up labels with Run info
     [self.runLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_LARGE]];
-    self.runLabel.textColor = [InterfaceViewVariables HSBA:TITLE_HSB];
+    self.runLabel.textColor = [InterfaceViewVariables darkText];
     self.runLabel.text = self.run.runName;
     [self.riverLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
+    self.riverLabel.textColor = [InterfaceViewVariables mediumText];
     self.riverLabel.text = [NSString stringWithFormat:@"on the %@", self.run.riverName];
     
     [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_SMALL]];
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
+    self.flowLabel.textColor = [InterfaceViewVariables mediumText];
     [self.timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_SMALL]];
     self.timeLabel.text = self.gage.dateFlowUpdate;
+    self.timeLabel.textColor = [InterfaceViewVariables mediumText];
     
     self.levelIndicator.radiusRatio = BIG_RADIUS_RATIO;
     self.levelIndicator.color = [InterfaceViewVariables flowColors][self.gage.colorCode];
@@ -143,6 +146,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.textLabel.text = [self getLink:indexPath][LINK_NAME];
+    cell.textLabel.textColor = [InterfaceViewVariables darkText];
     return cell;
 }
 

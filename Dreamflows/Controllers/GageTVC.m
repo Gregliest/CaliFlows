@@ -41,8 +41,8 @@
     firstVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
     
     //self.loadingIndicator.hidesWhenStopped = YES;
-    self.tableView.backgroundColor = [InterfaceViewVariables HSBA:BACKGROUND_HSB];
-    self.searchDisplayController.searchResultsTableView.backgroundColor = [InterfaceViewVariables HSBA:BACKGROUND_HSB];
+    self.tableView.backgroundColor = [InterfaceViewVariables backgroundColor];
+    self.searchDisplayController.searchResultsTableView.backgroundColor = [InterfaceViewVariables backgroundColor];
     
     //Add data notification handlers
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFromDatabase) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
@@ -214,6 +214,19 @@
     } else {
         return @"";
     }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    // Background color
+    view.tintColor = [InterfaceViewVariables backgroundColor];
+    
+    // Text Color
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    [header.textLabel setTextColor:[UIColor whiteColor]];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

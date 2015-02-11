@@ -7,9 +7,9 @@
 
 -(void)updateWithGage:(Gage *)gage {
     //Setup view
-    self.gageName.textColor = [InterfaceViewVariables HSBA:TITLE_HSB];
+    self.gageName.textColor = [InterfaceViewVariables darkText];
     [self.gageName setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_MEDIUM]];
-    self.gageProperties.textColor = [UIColor grayColor];
+    self.gageProperties.textColor = [InterfaceViewVariables mediumText];
     [self.gageProperties setFont:[UIFont systemFontOfSize:FONT_SIZE_SMALL]];
     self.gageProperties.alpha = .7;
     

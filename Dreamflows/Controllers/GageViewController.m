@@ -31,9 +31,11 @@
 
 - (void)setupView {
     [self.gageLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_LARGE]];
-    self.gageLabel.textColor = [InterfaceViewVariables HSBA:TITLE_HSB];
+    self.gageLabel.textColor = [InterfaceViewVariables darkText];
     [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_MEDIUM]];
+    self.flowLabel.textColor = [InterfaceViewVariables mediumText];
     [self.timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
+    self.timeLabel.textColor = [InterfaceViewVariables mediumText];
     self.levelIndicator.radiusRatio = BIG_RADIUS_RATIO;
 }
 
@@ -92,7 +94,9 @@
     //Parse title from run info
     Run * run = self.runs[indexPath.row];
     cell.textLabel.text = run.runName;
+    cell.textLabel.textColor = [InterfaceViewVariables darkText];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"   %@",run.lengthClass];
+    cell.detailTextLabel.textColor = [InterfaceViewVariables mediumText];
     return cell;
 }
 

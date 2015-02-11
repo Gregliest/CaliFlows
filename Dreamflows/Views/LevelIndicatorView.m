@@ -18,21 +18,22 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-    //Draw white border
+    
+    //    //Draw white border
     CGFloat outsideRadius = (rect.size.width *self.radiusRatio)/2;
-    [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:[UIColor whiteColor]];
-    
-    //Draw outside circle
-    outsideRadius = outsideRadius - CIRCLE_SPACING;
-    [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:self.color];
-    
-    //Draw white spacer
-    outsideRadius = outsideRadius - CIRCLE_SPACING +1;
-    [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:[UIColor whiteColor]];
+//    [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:[UIColor whiteColor]];
+//    
+//    //Draw outside circle
+//    outsideRadius = outsideRadius - CIRCLE_SPACING;
+//    [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:self.color];
+//    
+//    //Draw white spacer
+//    outsideRadius = outsideRadius - CIRCLE_SPACING +1;
+//    [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:[UIColor whiteColor]];
     
     
     //Draw inside circle
-    outsideRadius = outsideRadius - CIRCLE_SPACING;
+    outsideRadius = rect.size.width/8;
     [self fillCircleOfRadius:outsideRadius centeredInRect:rect withColor:self.color];
     
     CGContextRestoreGState(UIGraphicsGetCurrentContext());

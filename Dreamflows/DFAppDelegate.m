@@ -1,5 +1,6 @@
 #import "DFAppDelegate.h"
 #import "DFDataController.h"
+#import "InterfaceViewVariables.h"
 #import <Crashlytics/Crashlytics.h>
 
 @implementation DFAppDelegate
@@ -22,6 +23,15 @@ void onUncaughtException(NSException *exception)
     NSSetUncaughtExceptionHandler(&onUncaughtException);
     DFDataController *dfFetcher = [DFDataController sharedManager];
     [dfFetcher updateGages]; //start updating all
+    
+    [[UITabBar appearance] setSelectedImageTintColor:[InterfaceViewVariables titleBarColor]];
+    [[UINavigationBar appearance] setBarTintColor:[InterfaceViewVariables titleBarColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    
     return YES;
 }
 							
