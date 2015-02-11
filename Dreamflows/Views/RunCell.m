@@ -1,7 +1,7 @@
-#import "AddFavoritesCell.h"
+#import "RunCell.h"
 #import "Gage+Dreamflows.h"
 
-@implementation AddFavoritesCell
+@implementation RunCell
 
 - (void)setupView {
     self.runName.textColor = [UIColor blackColor];
@@ -25,7 +25,7 @@
 
 -(UILabel *)setFavoriteButtonColor:(UILabel *)favoriteLabel withRun:(Run *)run {
     if([run.favorite boolValue]) {
-        favoriteLabel.textColor = [InterfaceViewVariables HSBA:FAVORITES_HSB];
+        favoriteLabel.textColor = [InterfaceViewVariables favoritesColor];
         favoriteLabel.text =@"★";
     } else {
         favoriteLabel.textColor = [UIColor blackColor];

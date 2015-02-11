@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "DFDataController.h"
 //#import "GageCell.h"
-#import "AddFavoritesCell.h"
+#import "RunCell.h"
 
 @interface FavoriteRunsTVC : UITableViewController
 

@@ -4,7 +4,7 @@
 #import "InterfaceViewVariables.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BackgroundLayer.h"
-#import "AddFavoritesCell.h"
+#import "RunCell.h"
 #import "DFAppDelegate.h"
 
 @interface AddToFavsVC ()
@@ -147,8 +147,8 @@
         run = self.filteredRuns[indexPath.row];
     }
     
-    if([rawCell isKindOfClass:[AddFavoritesCell class]]) {
-        AddFavoritesCell *cell = (AddFavoritesCell *) rawCell;
+    if([rawCell isKindOfClass:[RunCell class]]) {
+        RunCell *cell = (RunCell *) rawCell;
         [cell updateWithRun:run];
         return cell;
     }

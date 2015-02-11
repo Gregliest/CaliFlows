@@ -20,7 +20,7 @@
 		2F4B4C86178A088900BB7D66 /* Gage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C85178A088900BB7D66 /* Gage.m */; };
 		2F4B4C89178A088A00BB7D66 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C88178A088A00BB7D66 /* Run.m */; };
 		2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A47175D459B00405FD6 /* AddToFavsVC.m */; };
-		2F656A4B175DE74300405FD6 /* AddFavoritesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A4A175DE74300405FD6 /* AddFavoritesCell.m */; };
+		2F656A4B175DE74300405FD6 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A4A175DE74300405FD6 /* RunCell.m */; };
 		2F73EC1D173B891200C73A9E /* FavoriteRunsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F73EC1C173B891200C73A9E /* FavoriteRunsTVC.m */; };
 		2F73EC86173C892000C73A9E /* DownAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F73EC7C173C892000C73A9E /* DownAccessory.png */; };
 		2F73EC87173C892000C73A9E /* DownAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F73EC7D173C892000C73A9E /* DownAccessory@2x.png */; };
@@ -58,6 +58,7 @@
 		2FEF424F176EFA67003459A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF424E176EFA67003459A8 /* Default.png */; };
 		2FEF4251176EFA6D003459A8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF4250176EFA6D003459A8 /* Default@2x.png */; };
 		2FEF4253176EFA74003459A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF4252176EFA74003459A8 /* Default-568h@2x.png */; };
+		2FF03EE01A6F14A80014767F /* CustomSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF03EDF1A6F14A80014767F /* CustomSegmentedControl.m */; };
 		2FF2AFCF17342C8E005E5E70 /* DFDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2AFCE17342C8E005E5E70 /* DFDataController.m */; };
 		2FF2B01F17344836005E5E70 /* DreamflowsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2B01D17344836005E5E70 /* DreamflowsModel.xcdatamodeld */; };
 		2FF2B02E17347F9E005E5E70 /* Gage+Dreamflows.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2B02D17347F9D005E5E70 /* Gage+Dreamflows.m */; };
@@ -102,8 +103,8 @@
 		2F4B4C88178A088A00BB7D66 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
 		2F656A46175D459B00405FD6 /* AddToFavsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToFavsVC.h; sourceTree = "<group>"; };
 		2F656A47175D459B00405FD6 /* AddToFavsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToFavsVC.m; sourceTree = "<group>"; };
-		2F656A49175DE74300405FD6 /* AddFavoritesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFavoritesCell.h; sourceTree = "<group>"; };
-		2F656A4A175DE74300405FD6 /* AddFavoritesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFavoritesCell.m; sourceTree = "<group>"; };
+		2F656A49175DE74300405FD6 /* RunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunCell.h; sourceTree = "<group>"; };
+		2F656A4A175DE74300405FD6 /* RunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunCell.m; sourceTree = "<group>"; };
 		2F73EC1B173B891200C73A9E /* FavoriteRunsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteRunsTVC.h; sourceTree = "<group>"; };
 		2F73EC1C173B891200C73A9E /* FavoriteRunsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteRunsTVC.m; sourceTree = "<group>"; };
 		2F73EC7C173C892000C73A9E /* DownAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownAccessory.png; sourceTree = "<group>"; };
@@ -159,6 +160,8 @@
 		2FEF424E176EFA67003459A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2FEF4250176EFA6D003459A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2FEF4252176EFA74003459A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2FF03EDE1A6F14A80014767F /* CustomSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentedControl.h; sourceTree = "<group>"; };
+		2FF03EDF1A6F14A80014767F /* CustomSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentedControl.m; sourceTree = "<group>"; };
 		2FF2AFCD17342C8E005E5E70 /* DFDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDataController.h; sourceTree = "<group>"; };
 		2FF2AFCE17342C8E005E5E70 /* DFDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFDataController.m; sourceTree = "<group>"; };
 		2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamflowsModel.xcdatamodel; sourceTree = "<group>"; };
@@ -237,8 +240,8 @@
 				2F2C4AB219D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard */,
 				2FD65C4F17382F34001C9AFB /* GageCell.h */,
 				2FD65C5017382F34001C9AFB /* GageCell.m */,
-				2F656A49175DE74300405FD6 /* AddFavoritesCell.h */,
-				2F656A4A175DE74300405FD6 /* AddFavoritesCell.m */,
+				2F656A49175DE74300405FD6 /* RunCell.h */,
+				2F656A4A175DE74300405FD6 /* RunCell.m */,
 				2F136F311746D49000F8F7AE /* LevelIndicatorView.h */,
 				2F136F321746D49200F8F7AE /* LevelIndicatorView.m */,
 				2FB12BC81742BF6200414268 /* InterfaceViewVariables.h */,
@@ -325,6 +328,8 @@
 				2F9884F81826149E000C561F /* DFParser.m */,
 				2F136F1D17456EAC00F8F7AE /* SVWebViewController */,
 				2F817A061731E2EA005F88E2 /* Supporting Files */,
+				2FF03EDE1A6F14A80014767F /* CustomSegmentedControl.h */,
+				2FF03EDF1A6F14A80014767F /* CustomSegmentedControl.m */,
 			);
 			path = Dreamflows;
 			sourceTree = "<group>";
@@ -431,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Spot;
-				LastTestingUpgradeCheck = 0600;
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Gregory Lee";
 				TargetAttributes = {
@@ -554,8 +559,9 @@
 				2F773106174EADE900915C13 /* BackgroundLayer.m in Sources */,
 				2F77310B174F0F8E00915C13 /* SearchFiltersViewController.m in Sources */,
 				2FC58F8D1756EDB1003968E4 /* FilterModel.m in Sources */,
+				2FF03EE01A6F14A80014767F /* CustomSegmentedControl.m in Sources */,
 				2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */,
-				2F656A4B175DE74300405FD6 /* AddFavoritesCell.m in Sources */,
+				2F656A4B175DE74300405FD6 /* RunCell.m in Sources */,
 				2F902985176947EE00C5B1AF /* SplashScreenVC.m in Sources */,
 				2F4B4C86178A088900BB7D66 /* Gage.m in Sources */,
 				2F4B4C89178A088A00BB7D66 /* Run.m in Sources */,
@@ -628,7 +634,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -662,8 +668,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gregory Lee (8G3M422BMR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -684,8 +690,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gregory Lee (CGGM2TJZ65)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gregory Lee (8G3M422BMR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -695,7 +701,7 @@
 				INFOPLIST_FILE = "Dreamflows/Supporting Files/Dreamflows-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8BBF15E8-7D63-4D63-BACC-F34DD48EC8BD";
+				PROVISIONING_PROFILE = "bfdf7e80-dea7-4586-819d-b285ad8f75a1";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -706,8 +712,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gregory Lee (CGGM2TJZ65)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -717,7 +723,7 @@
 				INFOPLIST_FILE = "Dreamflows/Supporting Files/Dreamflows-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8BBF15E8-7D63-4D63-BACC-F34DD48EC8BD";
+				PROVISIONING_PROFILE = "bfdf7e80-dea7-4586-819d-b285ad8f75a1";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

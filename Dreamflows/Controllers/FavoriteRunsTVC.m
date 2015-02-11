@@ -60,8 +60,8 @@
     static NSString *CellIdentifier = @"RunFav";
     UITableViewCell *rawCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if([rawCell isKindOfClass:[AddFavoritesCell class]]) {
-        AddFavoritesCell *cell = (AddFavoritesCell *) rawCell;
+    if([rawCell isKindOfClass:[RunCell class]]) {
+        RunCell *cell = (RunCell *) rawCell;
         Run *run = self.favorites[indexPath.row];
         [cell updateWithRun:run];
         return cell;
