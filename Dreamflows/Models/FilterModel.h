@@ -15,4 +15,5 @@
 -(NSArray *) getBoolsArray:(NSString *) key;
 -(id)initWithFields:(NSString *)field1 field2:(NSString *)field2;
 
+-(NSDictionary *)filterDictionary:(NSDictionary *)dictionary; //Dictionary of <key, Gages Array>
 @end

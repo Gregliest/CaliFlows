@@ -163,4 +163,22 @@
     return flows;
 }
 
+-(NSArray *)filterArray:(NSArray *) array {
+    NSArray *tempArray = array;
+    for(NSPredicate *predicate in [self getPredicates]) {
+        tempArray = [tempArray filteredArrayUsingPredicate:predicate];
+    }
+    return tempArray;
+}
+
+-(NSDictionary *)filterDictionary:(NSDictionary *)dictionary {
+    NSMutableDictionary *filteredGagesDictionary = [NSMutableDictionary new];
+    
+    for (NSString *key in dictionary) {
+        NSArray *gagesArray = dictionary[key];
+        [filteredGagesDictionary setObject:[self filterArray:gagesArray] forKey:key];
+    }
+    
+    return filteredGagesDictionary;
+}
 @end

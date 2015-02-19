@@ -239,10 +239,9 @@
                 NSArray * gageFlows = [DFParser parseFlows:records];
                 [self addFlowsToDatabase:gageFlows withContext:context];
             }
+        } completion:^{
             [self onFinishedUpdatingFlows];
             self.lastFlowsUpdate = [NSDate date];
-        } completion:^{
-            
         }];
     });
 }
