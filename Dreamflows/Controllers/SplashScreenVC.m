@@ -14,8 +14,7 @@
     [self.continueButton setBackgroundColor:[InterfaceViewVariables titleBarColor]];
     
     //Start the updating process
-    DFDataController *dfFetcher = [DFDataController sharedManager];
-    [dfFetcher updateGages];
+    [[DFDataController sharedManager] updateGages];
 }
 
 - (NSUInteger)supportedInterfaceOrientations {

@@ -21,8 +21,6 @@ void onUncaughtException(NSException *exception)
 {
     [Crashlytics startWithAPIKey:@"58e7e779ba7b01ef1111b7eddedf2f7bc95c682f"];
     NSSetUncaughtExceptionHandler(&onUncaughtException);
-    DFDataController *dfFetcher = [DFDataController sharedManager];
-    [dfFetcher updateGages]; //start updating all
     
     [[UITabBar appearance] setSelectedImageTintColor:[InterfaceViewVariables titleBarColor]];
     [[UINavigationBar appearance] setBarTintColor:[InterfaceViewVariables titleBarColor]];
