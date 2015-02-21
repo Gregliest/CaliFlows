@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *segmentedControlBackgroundView;
-//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (strong, nonatomic)UISearchDisplayController * searchController;
 @end
 
@@ -47,16 +47,18 @@
     UIViewController * firstVC = [self.tabBarController.viewControllers objectAtIndex:1];
     firstVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
     
-    //self.loadingIndicator.hidesWhenStopped = YES;
+    self.loadingIndicator.hidesWhenStopped = YES;
     
     //Add data notification handlers
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopLoadingSpinner) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [self startLoadingSpinner];
     [self refreshGagesFromDatabase];
     [self refreshFlows];
 }
@@ -85,6 +87,7 @@
 }
 
 - (void)refreshFlows {
+    [self startLoadingSpinner];
     [[DFDataController sharedManager] updateFlows];
 }
 
@@ -131,6 +134,24 @@
             }
         }
     }
+}
+
+#pragma mark - View methods
+
+-(void)startLoadingSpinner {
+    [self.loadingIndicator startAnimating];
+}
+
+-(void)stopLoadingSpinner {
+    // If there are no gages, keep spinning!
+    if (self.gagesByRegion.count > 0) {
+        // Delay for a half second so that it looks like the refresh button is doing something.  
+        [self performSelector:@selector(onTick) withObject:nil afterDelay:0.5];
+    }
+}
+
+-(void)onTick {
+    [self.loadingIndicator stopAnimating];
 }
 
 #pragma mark - Getters

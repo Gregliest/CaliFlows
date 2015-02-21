@@ -762,6 +762,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="flowSegmentedControl" destination="869-9m-4wf" id="Iov-We-LZ8"/>
+                        <outlet property="loadingIndicator" destination="SVd-qx-XuG" id="ekh-bT-Eux"/>
                         <outlet property="searchBar" destination="oHw-iy-GS2" id="s8d-Ja-xLE"/>
                         <outlet property="searchDisplayController" destination="TAX-4M-6Bd" id="KQy-2d-qCw"/>
                         <outlet property="segmentedControlBackgroundView" destination="H69-BT-Fiz" id="ogL-J2-VpR"/>

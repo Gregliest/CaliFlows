@@ -209,6 +209,7 @@
     NSDate *updatePlusInterval = [self.lastFlowsUpdate dateByAddingTimeInterval:UPDATE_INTERVAL_FLOWS_s];
     if(self.updatingFlows || [updatePlusInterval compare:[NSDate date]] == NSOrderedDescending) {
         NSLog(@"No need to update flows");
+        [self onFinishedUpdatingFlows];
         return;
     }
     //NSLog(@"In DFFetcher, updating flows");
