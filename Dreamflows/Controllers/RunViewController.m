@@ -72,7 +72,7 @@
     self.runLabel.text = self.run.runName;
     [self.riverLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
     self.riverLabel.textColor = [InterfaceViewVariables mediumText];
-    self.riverLabel.text = [NSString stringWithFormat:@"on the %@", self.run.riverName];
+    self.riverLabel.text = [NSString stringWithFormat:@"on the%@", self.run.riverName];
     
     [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_SMALL]];
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];

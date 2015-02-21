@@ -5,8 +5,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *flowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *runTableView;
-@property (weak, nonatomic) IBOutlet LevelIndicatorView *levelIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *graphButton;
+@property (weak, nonatomic) IBOutlet UIWebView *graphWebView;
 @property (strong, nonatomic) NSArray * runs;
 @end
 
@@ -32,18 +32,16 @@
 - (void)setupView {
     [self.gageLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_LARGE]];
     self.gageLabel.textColor = [InterfaceViewVariables darkText];
-    [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_MEDIUM]];
-    self.flowLabel.textColor = [InterfaceViewVariables mediumText];
+    [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_HUGE]];
+    self.flowLabel.textColor = [InterfaceViewVariables flowColors][self.gage.colorCode];
     [self.timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
     self.timeLabel.textColor = [InterfaceViewVariables mediumText];
-    self.levelIndicator.radiusRatio = BIG_RADIUS_RATIO;
 }
 
 - (void)refreshView {
     self.gageLabel.text = self.gage.name;
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
     self.timeLabel.text = self.gage.dateFlowUpdate;
-    self.levelIndicator.color = [InterfaceViewVariables flowColors][self.gage.colorCode];
     if (self.gage.graphLink.length > 0) {
         self.graphButton.alpha = 1.0;
         self.graphButton.enabled = YES;
@@ -51,6 +49,11 @@
         self.graphButton.alpha = .7;
         self.graphButton.enabled = NO;
     }
+    
+    NSURL *url = [NSURL URLWithString:self.gage.graphLink];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
+    [self.graphWebView loadRequest:request];
+    self.graphWebView.scalesPageToFit = YES;
 }
 
 #warning todo this should update the view. 

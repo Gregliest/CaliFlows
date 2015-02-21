@@ -3,7 +3,6 @@
 #import "FilterModel.h"
 #import "InterfaceViewVariables.h"
 #import <QuartzCore/QuartzCore.h>
-#import "BackgroundLayer.h"
 #import "RunCell.h"
 #import "DFAppDelegate.h"
 

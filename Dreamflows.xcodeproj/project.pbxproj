@@ -31,7 +31,6 @@
 		2F73EC8C173C892000C73A9E /* UpAccessoryWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F73EC82173C892000C73A9E /* UpAccessoryWhite.png */; };
 		2F73EC8D173C892000C73A9E /* UpAccessoryWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F73EC83173C892000C73A9E /* UpAccessoryWhite@2x.png */; };
 		2F74AE9F190F7E78005A3EB8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F74AE9E190F7E78005A3EB8 /* Crashlytics.framework */; };
-		2F773106174EADE900915C13 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F773105174EADE900915C13 /* BackgroundLayer.m */; };
 		2F773108174EAE6A00915C13 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F773107174EAE6A00915C13 /* QuartzCore.framework */; };
 		2F77310B174F0F8E00915C13 /* SearchFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */; };
 		2F817A001731E2EA005F88E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8179FF1731E2EA005F88E2 /* UIKit.framework */; };
@@ -58,7 +57,6 @@
 		2FEF424F176EFA67003459A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF424E176EFA67003459A8 /* Default.png */; };
 		2FEF4251176EFA6D003459A8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF4250176EFA6D003459A8 /* Default@2x.png */; };
 		2FEF4253176EFA74003459A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF4252176EFA74003459A8 /* Default-568h@2x.png */; };
-		2FF03EE01A6F14A80014767F /* CustomSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF03EDF1A6F14A80014767F /* CustomSegmentedControl.m */; };
 		2FF2AFCF17342C8E005E5E70 /* DFDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2AFCE17342C8E005E5E70 /* DFDataController.m */; };
 		2FF2B01F17344836005E5E70 /* DreamflowsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2B01D17344836005E5E70 /* DreamflowsModel.xcdatamodeld */; };
 		2FF2B02E17347F9E005E5E70 /* Gage+Dreamflows.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2B02D17347F9D005E5E70 /* Gage+Dreamflows.m */; };
@@ -116,8 +114,6 @@
 		2F73EC82173C892000C73A9E /* UpAccessoryWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpAccessoryWhite.png; sourceTree = "<group>"; };
 		2F73EC83173C892000C73A9E /* UpAccessoryWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessoryWhite@2x.png"; sourceTree = "<group>"; };
 		2F74AE9E190F7E78005A3EB8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		2F773104174EADE900915C13 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
-		2F773105174EADE900915C13 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		2F773107174EAE6A00915C13 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F773109174F0F8E00915C13 /* SearchFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFiltersViewController.h; sourceTree = "<group>"; };
 		2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFiltersViewController.m; sourceTree = "<group>"; };
@@ -160,8 +156,6 @@
 		2FEF424E176EFA67003459A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2FEF4250176EFA6D003459A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2FEF4252176EFA74003459A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2FF03EDE1A6F14A80014767F /* CustomSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentedControl.h; sourceTree = "<group>"; };
-		2FF03EDF1A6F14A80014767F /* CustomSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentedControl.m; sourceTree = "<group>"; };
 		2FF2AFCD17342C8E005E5E70 /* DFDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDataController.h; sourceTree = "<group>"; };
 		2FF2AFCE17342C8E005E5E70 /* DFDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFDataController.m; sourceTree = "<group>"; };
 		2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamflowsModel.xcdatamodel; sourceTree = "<group>"; };
@@ -246,8 +240,6 @@
 				2F136F321746D49200F8F7AE /* LevelIndicatorView.m */,
 				2FB12BC81742BF6200414268 /* InterfaceViewVariables.h */,
 				2FB12BC91742BF6200414268 /* InterfaceViewVariables.m */,
-				2F773104174EADE900915C13 /* BackgroundLayer.h */,
-				2F773105174EADE900915C13 /* BackgroundLayer.m */,
 				2F07661F174AFED20091D62D /* UIApplicationNetworkActivityCounter.h */,
 				2F076620174AFED20091D62D /* UIApplicationNetworkActivityCounter.m */,
 			);
@@ -328,8 +320,6 @@
 				2F9884F81826149E000C561F /* DFParser.m */,
 				2F136F1D17456EAC00F8F7AE /* SVWebViewController */,
 				2F817A061731E2EA005F88E2 /* Supporting Files */,
-				2FF03EDE1A6F14A80014767F /* CustomSegmentedControl.h */,
-				2FF03EDF1A6F14A80014767F /* CustomSegmentedControl.m */,
 			);
 			path = Dreamflows;
 			sourceTree = "<group>";
@@ -556,10 +546,8 @@
 				2F136F2E17456EAC00F8F7AE /* SVWebViewController.m in Sources */,
 				2F136F331746D49200F8F7AE /* LevelIndicatorView.m in Sources */,
 				2F076621174AFED20091D62D /* UIApplicationNetworkActivityCounter.m in Sources */,
-				2F773106174EADE900915C13 /* BackgroundLayer.m in Sources */,
 				2F77310B174F0F8E00915C13 /* SearchFiltersViewController.m in Sources */,
 				2FC58F8D1756EDB1003968E4 /* FilterModel.m in Sources */,
-				2FF03EE01A6F14A80014767F /* CustomSegmentedControl.m in Sources */,
 				2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */,
 				2F656A4B175DE74300405FD6 /* RunCell.m in Sources */,
 				2F902985176947EE00C5B1AF /* SplashScreenVC.m in Sources */,

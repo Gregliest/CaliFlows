@@ -1,6 +1,5 @@
 #import "GageTVC.h"
 #import "GageCell.h"
-#import "BackgroundLayer.h"
 
 /**
  This table view displays Gages sorted by region, and then geographically within each region.  It supports a filter mode, which currently supports filtering by flow level, but could be extended to include other filters, and a textual search mode.
@@ -58,6 +57,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [self refreshGagesFromDatabase];
     [self refreshFlows];
 }
 
@@ -78,6 +78,10 @@
 
 - (IBAction)goToSearch:(UIBarButtonItem *)sender {
     [self.searchBar becomeFirstResponder];
+}
+
+- (IBAction)refreshPressed:(UIBarButtonItem *)sender {
+    [self refreshFlows];
 }
 
 - (void)refreshFlows {
