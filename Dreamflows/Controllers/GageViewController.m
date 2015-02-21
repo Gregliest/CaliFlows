@@ -1,6 +1,6 @@
 #import "GageViewController.h"
 
-@interface GageViewController () <UITableViewDataSource>
+@interface GageViewController () <UITableViewDataSource, UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *gageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -14,6 +14,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.graphWebView.delegate = self;
     
     [self setTitle:@"Gage Info"];
     [self setupView];
@@ -101,6 +103,16 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"   %@",run.lengthClass];
     cell.detailTextLabel.textColor = [InterfaceViewVariables mediumText];
     return cell;
+}
+
+# pragma mark - Web View Delegate
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 @end
