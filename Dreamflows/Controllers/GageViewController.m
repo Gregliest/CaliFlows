@@ -5,13 +5,17 @@
 #import "WebVC.h"
 
 @interface GageViewController () <UITableViewDataSource, UIWebViewDelegate>
+@property (strong, nonatomic) NSArray * runs;
+
 @property (weak, nonatomic) IBOutlet UILabel *gageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *runTableView;
 @property (weak, nonatomic) IBOutlet UIWebView *graphWebView;
+@property (weak, nonatomic) IBOutlet UIButton *graphButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *graphLoadingIndicator;
-@property (strong, nonatomic) NSArray * runs;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineBreakTimeLabelConstraint;
 @end
 
 @implementation GageViewController
@@ -44,23 +48,46 @@
     self.timeLabel.textColor = [InterfaceViewVariables mediumText];
     
     self.graphLoadingIndicator.hidesWhenStopped = YES;
+    self.graphWebView.scalesPageToFit = YES;
 }
 
 - (void)refreshView {
     self.gageLabel.text = self.gage.name;
-    self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
+    self.flowLabel.text = [self flowText:self.gage];
     self.timeLabel.text = self.gage.dateFlowUpdate;
     
-    NSURL *url = [NSURL URLWithString:self.gage.graphLink];
-    NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
-    [self.graphWebView loadRequest:request];
-    self.graphWebView.scalesPageToFit = YES;
+    if (self.gage.graphLink.length > 0) {
+        NSURL *url = [NSURL URLWithString:self.gage.graphLink];
+        NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
+        [self.graphWebView loadRequest:request];
+    } else {
+        [self disableGraph];
+    }
 }
 
-#warning todo this should update the view. 
+- (void)disableGraph {
+    self.graphButton.userInteractionEnabled = NO;
+    self.graphButton.frame = CGRectMake(0, 0, 0, 0);
+    
+    //Collapse the web view.
+    self.graphWebView.hidden = YES;
+    self.lineBreakTimeLabelConstraint.constant = 10;
+}
+
+- (NSString *)flowText:(Gage*)gage {
+    NSString *flow = self.gage.flow;
+    // If the flow string contains "No reading"
+    if ([flow rangeOfString:@"No reading"].length != 0) {
+        return @"- - cfs";
+    } else {
+        return [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
+    }
+}
+
 -(void)setGage:(Gage *)gage {
     _gage = gage;
     self.runs = [NSArray arrayWithArray:[gage.runsFromGage allObjects]];
+    [self refreshView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

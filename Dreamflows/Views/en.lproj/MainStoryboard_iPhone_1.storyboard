@@ -886,7 +886,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yLc-Qz-CNg" firstAttribute="top" secondItem="ZZQ-jQ-BUX" secondAttribute="bottom" constant="14" id="2OE-u3-Zjx"/>
+                            <constraint firstItem="yLc-Qz-CNg" firstAttribute="top" secondItem="ZZQ-jQ-BUX" secondAttribute="bottom" priority="750" constant="14" id="2OE-u3-Zjx"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="top" secondItem="3QW-JK-2qw" secondAttribute="bottom" constant="8" id="2TI-em-Vnx"/>
                             <constraint firstAttribute="centerX" secondItem="ZZQ-jQ-BUX" secondAttribute="centerX" id="3Hn-rD-529"/>
                             <constraint firstItem="GQq-tb-KWS" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leading" constant="20" symbolic="YES" id="5DM-QY-tpk"/>
@@ -894,6 +894,7 @@
                             <constraint firstAttribute="trailing" secondItem="yLc-Qz-CNg" secondAttribute="trailing" constant="20" symbolic="YES" id="6ZZ-dV-eNd"/>
                             <constraint firstItem="3QW-JK-2qw" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leadingMargin" id="8UR-XW-ejU"/>
                             <constraint firstItem="zhH-vg-hbC" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leadingMargin" id="Icj-Yj-dpf"/>
+                            <constraint firstItem="yLc-Qz-CNg" firstAttribute="top" secondItem="3QW-JK-2qw" secondAttribute="bottom" constant="150" id="M2s-MY-i9S"/>
                             <constraint firstAttribute="trailing" secondItem="3QW-JK-2qw" secondAttribute="trailing" constant="20" id="MRD-gx-nEf"/>
                             <constraint firstItem="2IN-Dh-Ch0" firstAttribute="centerX" secondItem="ZZQ-jQ-BUX" secondAttribute="centerX" id="Md2-KX-VWZ"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="centerY" secondItem="3Ia-sT-UsV" secondAttribute="centerY" id="OlS-Pd-YVw"/>
@@ -917,8 +918,10 @@
                     <connections>
                         <outlet property="flowLabel" destination="zhH-vg-hbC" id="AOg-Zs-hnl"/>
                         <outlet property="gageLabel" destination="GQq-tb-KWS" id="4qY-rI-Z3d"/>
+                        <outlet property="graphButton" destination="3Ia-sT-UsV" id="phc-fq-wd4"/>
                         <outlet property="graphLoadingIndicator" destination="2IN-Dh-Ch0" id="pgf-04-nYr"/>
                         <outlet property="graphWebView" destination="ZZQ-jQ-BUX" id="3mD-wa-Mcd"/>
+                        <outlet property="lineBreakTimeLabelConstraint" destination="M2s-MY-i9S" id="usM-oB-ATs"/>
                         <outlet property="runTableView" destination="yj7-Ab-YtS" id="xaF-sI-SfG"/>
                         <outlet property="timeLabel" destination="3QW-JK-2qw" id="SM7-aQ-oLW"/>
                     </connections>

@@ -80,7 +80,7 @@
     self.riverLabel.text = [NSString stringWithFormat:@"on the%@", self.run.riverName];
     [self.difficultyLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_LARGE]];
     self.difficultyLabel.textColor = [InterfaceViewVariables darkText];
-    self.difficultyLabel.text = self.run.difficulty;
+    self.difficultyLabel.text = [NSString stringWithFormat:@"Class%@", self.run.difficulty];
     
     [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_SMALL]];
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
