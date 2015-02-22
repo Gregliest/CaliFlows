@@ -872,7 +872,7 @@
                                 </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-sT-UsV">
-                                <rect key="frame" x="83" y="178" width="160" height="128"/>
+                                <rect key="frame" x="80" y="178" width="160" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -880,6 +880,9 @@
                                     <segue destination="6Xg-si-xeB" kind="push" identifier="Graph Segue" id="akM-fG-Crc"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2IN-Dh-Ch0">
+                                <rect key="frame" x="150" y="232" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -892,15 +895,17 @@
                             <constraint firstItem="3QW-JK-2qw" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leadingMargin" id="8UR-XW-ejU"/>
                             <constraint firstItem="zhH-vg-hbC" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leadingMargin" id="Icj-Yj-dpf"/>
                             <constraint firstAttribute="trailing" secondItem="3QW-JK-2qw" secondAttribute="trailing" constant="20" id="MRD-gx-nEf"/>
+                            <constraint firstItem="2IN-Dh-Ch0" firstAttribute="centerX" secondItem="ZZQ-jQ-BUX" secondAttribute="centerX" id="Md2-KX-VWZ"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="centerY" secondItem="3Ia-sT-UsV" secondAttribute="centerY" id="OlS-Pd-YVw"/>
                             <constraint firstAttribute="trailing" secondItem="zhH-vg-hbC" secondAttribute="trailing" constant="20" id="Qul-g0-PZJ"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="width" secondItem="3Ia-sT-UsV" secondAttribute="width" id="RD4-pj-FEM"/>
                             <constraint firstItem="yj7-Ab-YtS" firstAttribute="top" secondItem="yLc-Qz-CNg" secondAttribute="bottom" constant="8" symbolic="YES" id="RPJ-X3-RY2"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="height" secondItem="3Ia-sT-UsV" secondAttribute="height" id="T40-do-f6f"/>
+                            <constraint firstItem="2IN-Dh-Ch0" firstAttribute="centerY" secondItem="ZZQ-jQ-BUX" secondAttribute="centerY" id="V1L-3l-kXW"/>
                             <constraint firstItem="yj7-Ab-YtS" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leading" id="W72-97-9JK"/>
                             <constraint firstItem="zhH-vg-hbC" firstAttribute="top" secondItem="GQq-tb-KWS" secondAttribute="bottom" constant="5" id="WZ8-Ew-qaO"/>
                             <constraint firstItem="yLc-Qz-CNg" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leading" constant="20" symbolic="YES" id="ao4-bR-7tg"/>
-                            <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="centerX" secondItem="3Ia-sT-UsV" secondAttribute="centerX" constant="-3" id="dPh-3Z-i7g"/>
+                            <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="centerX" secondItem="3Ia-sT-UsV" secondAttribute="centerX" id="dPh-3Z-i7g"/>
                             <constraint firstItem="GQq-tb-KWS" firstAttribute="top" secondItem="wib-cl-ocQ" secondAttribute="bottom" constant="11" id="jQZ-4Q-OTp"/>
                             <constraint firstAttribute="trailing" secondItem="yj7-Ab-YtS" secondAttribute="trailing" id="pwB-R6-9Vy"/>
                             <constraint firstItem="3QW-JK-2qw" firstAttribute="top" secondItem="zhH-vg-hbC" secondAttribute="bottom" id="sgg-oo-Eap"/>
@@ -912,6 +917,7 @@
                     <connections>
                         <outlet property="flowLabel" destination="zhH-vg-hbC" id="AOg-Zs-hnl"/>
                         <outlet property="gageLabel" destination="GQq-tb-KWS" id="4qY-rI-Z3d"/>
+                        <outlet property="graphLoadingIndicator" destination="2IN-Dh-Ch0" id="pgf-04-nYr"/>
                         <outlet property="graphWebView" destination="ZZQ-jQ-BUX" id="3mD-wa-Mcd"/>
                         <outlet property="runTableView" destination="yj7-Ab-YtS" id="xaF-sI-SfG"/>
                         <outlet property="timeLabel" destination="3QW-JK-2qw" id="SM7-aQ-oLW"/>
@@ -1104,17 +1110,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KwK-uP-qNP">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KwK-uP-qNP" firstAttribute="centerX" secondItem="6ff-aF-r81" secondAttribute="centerX" id="2T1-kT-TJ6"/>
                             <constraint firstAttribute="centerX" secondItem="6ff-aF-r81" secondAttribute="centerX" id="FpZ-lA-s2s"/>
                             <constraint firstAttribute="centerY" secondItem="6ff-aF-r81" secondAttribute="centerY" id="LxT-8t-ngo"/>
                             <constraint firstItem="6ff-aF-r81" firstAttribute="width" secondItem="X1l-LD-Pu4" secondAttribute="width" id="aGQ-KW-qRs"/>
+                            <constraint firstItem="KwK-uP-qNP" firstAttribute="centerY" secondItem="6ff-aF-r81" secondAttribute="centerY" id="e2J-GO-iXw"/>
                             <constraint firstItem="6ff-aF-r81" firstAttribute="height" secondItem="X1l-LD-Pu4" secondAttribute="height" id="yV6-jz-FhE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hiE-HV-0Lj"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="KwK-uP-qNP" id="3yO-1s-fSL"/>
                         <outlet property="webView" destination="6ff-aF-r81" id="xlX-tL-Y3f"/>
                     </connections>
                 </viewController>

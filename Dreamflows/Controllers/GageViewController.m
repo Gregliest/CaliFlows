@@ -9,8 +9,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *flowLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *runTableView;
-@property (weak, nonatomic) IBOutlet UIButton *graphButton;
 @property (weak, nonatomic) IBOutlet UIWebView *graphWebView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *graphLoadingIndicator;
 @property (strong, nonatomic) NSArray * runs;
 @end
 
@@ -42,19 +42,14 @@
     self.flowLabel.textColor = [InterfaceViewVariables flowColors][self.gage.colorCode];
     [self.timeLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
     self.timeLabel.textColor = [InterfaceViewVariables mediumText];
+    
+    self.graphLoadingIndicator.hidesWhenStopped = YES;
 }
 
 - (void)refreshView {
     self.gageLabel.text = self.gage.name;
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];
     self.timeLabel.text = self.gage.dateFlowUpdate;
-    if (self.gage.graphLink.length > 0) {
-        self.graphButton.alpha = 1.0;
-        self.graphButton.enabled = YES;
-    } else {
-        self.graphButton.alpha = .7;
-        self.graphButton.enabled = NO;
-    }
     
     NSURL *url = [NSURL URLWithString:self.gage.graphLink];
     NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
@@ -110,11 +105,11 @@
 # pragma mark - Web View Delegate
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self.graphLoadingIndicator startAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.graphLoadingIndicator stopAnimating];
 }
 
 @end
