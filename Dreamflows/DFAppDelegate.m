@@ -24,10 +24,10 @@ void onUncaughtException(NSException *exception)
     
     [[UITabBar appearance] setSelectedImageTintColor:[InterfaceViewVariables titleBarColor]];
     [[UINavigationBar appearance] setBarTintColor:[InterfaceViewVariables titleBarColor]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setTintColor:[InterfaceViewVariables DFWhite]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [InterfaceViewVariables DFWhite], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
     
     return YES;

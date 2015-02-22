@@ -7,6 +7,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *riverLabel;
 @property (weak, nonatomic) IBOutlet UILabel *runLabel;
+@property (weak, nonatomic) IBOutlet UILabel *difficultyLabel;
 @property (weak, nonatomic) IBOutlet LevelIndicatorView *levelIndicator;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refresh;
 @property (weak, nonatomic) IBOutlet UILabel *favorite;
@@ -60,7 +61,7 @@
         self.favorite.textColor = [InterfaceViewVariables favoritesColor];
         self.favorite.text =@"★";
     } else {
-        self.favorite.textColor = [UIColor blackColor];
+        self.favorite.textColor = [InterfaceViewVariables darkText];
         self.favorite.text =@"☆";
     }
 }
@@ -73,6 +74,9 @@
     [self.riverLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_MEDIUM]];
     self.riverLabel.textColor = [InterfaceViewVariables mediumText];
     self.riverLabel.text = [NSString stringWithFormat:@"on the%@", self.run.riverName];
+    [self.difficultyLabel setFont:[UIFont systemFontOfSize:FONT_SIZE_LARGE]];
+    self.difficultyLabel.textColor = [InterfaceViewVariables darkText];
+    self.difficultyLabel.text = self.run.difficulty;
     
     [self.flowLabel setFont:[UIFont italicSystemFontOfSize:FONT_SIZE_SMALL]];
     self.flowLabel.text = [NSString stringWithFormat:@"%@ %@", self.gage.flow, self.gage.flowUnit];

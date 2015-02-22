@@ -11,10 +11,13 @@
 @interface InterfaceViewVariables : NSObject
 + (NSDictionary *) flowColors;
 + (NSArray *) flowKeys;
+
 + (UIColor *)darkText;
 + (UIColor *)mediumText;
 + (UIColor *)favoritesColor;
 + (UIColor *)titleBarColor;
 + (UIColor *)backgroundColor;
 
++ (UIColor *)DFWhite;
++ (UIColor *)DFDarkGray;
 @end

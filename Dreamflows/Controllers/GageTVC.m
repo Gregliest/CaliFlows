@@ -40,7 +40,7 @@
     self.searchController.searchResultsDataSource = self;
     self.searchController.searchResultsDelegate = self;
     self.segmentedControlBackgroundView.layer.borderWidth = .25f;
-    self.segmentedControlBackgroundView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.segmentedControlBackgroundView.layer.borderColor = [InterfaceViewVariables DFDarkGray].CGColor;
     
     //Tab bars
     self.tabBarItem =[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0];
@@ -219,7 +219,7 @@
     
     // Text Color
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    [header.textLabel setTextColor:[UIColor whiteColor]];
+    [header.textLabel setTextColor:[InterfaceViewVariables DFWhite]];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
