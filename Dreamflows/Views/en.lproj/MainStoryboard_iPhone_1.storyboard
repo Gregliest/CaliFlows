@@ -877,19 +877,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6Xg-si-xeB" kind="modal" identifier="Graph Segue" id="ygs-Y9-cMk"/>
+                                    <segue destination="6Xg-si-xeB" kind="push" identifier="Graph Segue" id="akM-fG-Crc"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOa-49-qv3">
-                                <rect key="frame" x="257" y="525" width="43" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="F8a-Hv-jrx"/>
-                                    <constraint firstAttribute="height" constant="43" id="nDC-5m-Mii"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="Graph-icon.png">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -897,12 +886,10 @@
                             <constraint firstItem="yLc-Qz-CNg" firstAttribute="top" secondItem="ZZQ-jQ-BUX" secondAttribute="bottom" constant="14" id="2OE-u3-Zjx"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="top" secondItem="3QW-JK-2qw" secondAttribute="bottom" constant="8" id="2TI-em-Vnx"/>
                             <constraint firstAttribute="centerX" secondItem="ZZQ-jQ-BUX" secondAttribute="centerX" id="3Hn-rD-529"/>
-                            <constraint firstAttribute="trailing" secondItem="YOa-49-qv3" secondAttribute="trailing" constant="20" id="3q4-xL-ryH"/>
                             <constraint firstItem="GQq-tb-KWS" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leading" constant="20" symbolic="YES" id="5DM-QY-tpk"/>
                             <constraint firstAttribute="trailing" secondItem="GQq-tb-KWS" secondAttribute="trailing" constant="20" symbolic="YES" id="63Y-PQ-4pG"/>
                             <constraint firstAttribute="trailing" secondItem="yLc-Qz-CNg" secondAttribute="trailing" constant="20" symbolic="YES" id="6ZZ-dV-eNd"/>
                             <constraint firstItem="3QW-JK-2qw" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leadingMargin" id="8UR-XW-ejU"/>
-                            <constraint firstItem="YOa-49-qv3" firstAttribute="top" secondItem="GQq-tb-KWS" secondAttribute="bottom" constant="426" id="HQH-1V-1HZ"/>
                             <constraint firstItem="zhH-vg-hbC" firstAttribute="leading" secondItem="OSR-RW-q51" secondAttribute="leadingMargin" id="Icj-Yj-dpf"/>
                             <constraint firstAttribute="trailing" secondItem="3QW-JK-2qw" secondAttribute="trailing" constant="20" id="MRD-gx-nEf"/>
                             <constraint firstItem="ZZQ-jQ-BUX" firstAttribute="centerY" secondItem="3Ia-sT-UsV" secondAttribute="centerY" id="OlS-Pd-YVw"/>
@@ -925,7 +912,6 @@
                     <connections>
                         <outlet property="flowLabel" destination="zhH-vg-hbC" id="AOg-Zs-hnl"/>
                         <outlet property="gageLabel" destination="GQq-tb-KWS" id="4qY-rI-Z3d"/>
-                        <outlet property="graphButton" destination="YOa-49-qv3" id="jnG-bF-rjW"/>
                         <outlet property="graphWebView" destination="ZZQ-jQ-BUX" id="3mD-wa-Mcd"/>
                         <outlet property="runTableView" destination="yj7-Ab-YtS" id="xaF-sI-SfG"/>
                         <outlet property="timeLabel" destination="3QW-JK-2qw" id="SM7-aQ-oLW"/>
@@ -1022,7 +1008,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Tr6-xX-3At" kind="push" identifier="Web Segue" id="fsC-2A-ZsD"/>
+                                            <segue destination="6Xg-si-xeB" kind="push" identifier="Web Segue" id="Ugz-KF-yfL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1042,7 +1028,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6Xg-si-xeB" kind="modal" identifier="Graph Segue" id="CgP-w3-yHa"/>
+                                    <segue destination="6Xg-si-xeB" kind="push" identifier="Graph Segue" id="zDT-jK-uic"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1102,10 +1088,10 @@
             </objects>
             <point key="canvasLocation" x="985" y="99"/>
         </scene>
-        <!--Modal Web View Controller-->
+        <!--WebVC-->
         <scene sceneID="nwS-E3-B6t">
             <objects>
-                <viewController id="6Xg-si-xeB" customClass="SVModalWebViewController" sceneMemberID="viewController">
+                <viewController id="6Xg-si-xeB" customClass="WebVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NKb-QO-jgq"/>
                         <viewControllerLayoutGuide type="bottom" id="vGU-vz-ZIY"/>
@@ -1113,32 +1099,28 @@
                     <view key="view" contentMode="scaleToFill" id="X1l-LD-Pu4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-aF-r81">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6ff-aF-r81" secondAttribute="centerX" id="FpZ-lA-s2s"/>
+                            <constraint firstAttribute="centerY" secondItem="6ff-aF-r81" secondAttribute="centerY" id="LxT-8t-ngo"/>
+                            <constraint firstItem="6ff-aF-r81" firstAttribute="width" secondItem="X1l-LD-Pu4" secondAttribute="width" id="aGQ-KW-qRs"/>
+                            <constraint firstItem="6ff-aF-r81" firstAttribute="height" secondItem="X1l-LD-Pu4" secondAttribute="height" id="yV6-jz-FhE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hiE-HV-0Lj"/>
+                    <connections>
+                        <outlet property="webView" destination="6ff-aF-r81" id="xlX-tL-Y3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPb-Xe-gUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-589"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="YvX-OQ-RgR">
-            <objects>
-                <viewController id="Tr6-xX-3At" customClass="SVWebViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Tms-ZD-ejx"/>
-                        <viewControllerLayoutGuide type="bottom" id="dar-cE-b7h"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ky4-a5-hc5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9GL-Ve-SCc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-EI-rqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1464" y="105"/>
+            <point key="canvasLocation" x="1427" y="-571"/>
         </scene>
     </scenes>
     <resources>
@@ -1151,7 +1133,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="zDT-jK-uic"/>
         <segue reference="x3V-2q-x5F"/>
-        <segue reference="ygs-Y9-cMk"/>
     </inferredMetricsTieBreakers>
 </document>

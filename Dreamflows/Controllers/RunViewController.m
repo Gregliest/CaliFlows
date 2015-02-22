@@ -1,6 +1,10 @@
 #import "RunViewController.h"
-#import "SVWebViewController.h"
+#import "WebVC.h"
 #import "DFAppDelegate.h"
+#import "Gage+Dreamflows.h"
+#import "InterfaceViewVariables.h"
+#import "LevelIndicatorView.h"
+#import "DFDataController.h"
 
 @interface RunViewController () 
 @property (weak, nonatomic) IBOutlet UILabel *flowLabel;
@@ -96,18 +100,16 @@
         if (indexPath) {
             if ([segue.identifier isEqualToString:@"Web Segue"]) {
                 
-                SVWebViewController *webController = [segue destinationViewController];
+                WebVC *webController = [segue destinationViewController];
                 NSURL *url = [NSURL URLWithString:[self getLink:indexPath][LINK]];
-                webController = [webController initWithWebContent:url withCachedPage:[self getLink:indexPath][CACHE]];
+                webController.url = url;
             }
         }
     }
     if ([segue.identifier isEqualToString:@"Graph Segue"]) {
-        SVModalWebViewController *webController = [segue destinationViewController];
-        NSURL *URL = [NSURL URLWithString:self.gage.graphLink];
-        webController = [webController initWithURL:URL];
-        webController.modalPresentationStyle = UIModalPresentationPageSheet;
-        webController.availableActions = SVWebViewControllerAvailableActionsOpenInSafari | SVWebViewControllerAvailableActionsOpenInChrome | SVWebViewControllerAvailableActionsCopyLink | SVWebViewControllerAvailableActionsMailLink;
+        WebVC *webController = [segue destinationViewController];
+        NSURL *url = [NSURL URLWithString:self.gage.graphLink];
+        webController.url = url;
     }
 }
 

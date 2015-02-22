@@ -1,5 +1,11 @@
 #import "GageTVC.h"
 #import "GageCell.h"
+#import "DFDataController.h"
+#import "LevelIndicatorView.h"
+#import "InterfaceViewVariables.h"
+#import <QuartzCore/QuartzCore.h>
+#import "SearchFiltersViewController.h"
+#import "FilterModel.h"
 
 /**
  This table view displays Gages sorted by region, and then geographically within each region.  It supports a filter mode, which currently supports filtering by flow level, but could be extended to include other filters, and a textual search mode.

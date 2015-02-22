@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F076621174AFED20091D62D /* UIApplicationNetworkActivityCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F076620174AFED20091D62D /* UIApplicationNetworkActivityCounter.m */; };
 		2F076629174B3A360091D62D /* Graph-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F076628174B3A360091D62D /* Graph-icon.png */; };
-		2F136F2B17456EAC00F8F7AE /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F136F1E17456EAC00F8F7AE /* SVWebViewController.strings */; };
-		2F136F2C17456EAC00F8F7AE /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F136F2517456EAC00F8F7AE /* SVModalWebViewController.m */; };
-		2F136F2D17456EAC00F8F7AE /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F136F2617456EAC00F8F7AE /* SVWebViewController.bundle */; };
-		2F136F2E17456EAC00F8F7AE /* SVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F136F2817456EAC00F8F7AE /* SVWebViewController.m */; };
 		2F136F3017456FC500F8F7AE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F136F2F17456FC500F8F7AE /* MessageUI.framework */; };
 		2F136F331746D49200F8F7AE /* LevelIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F136F321746D49200F8F7AE /* LevelIndicatorView.m */; };
 		2F2A086618A35583002CE88B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A086518A35583002CE88B /* Images.xcassets */; };
@@ -50,6 +46,7 @@
 		2F9029D6176EE77900C5B1AF /* kayak_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029D5176EE77800C5B1AF /* kayak_57.png */; };
 		2F9029D8176EE78C00C5B1AF /* kayak_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029D7176EE78B00C5B1AF /* kayak_114.png */; };
 		2F9884F91826149E000C561F /* DFParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9884F81826149E000C561F /* DFParser.m */; };
+		2F9B3B2D1A9A888600CAB337 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B3B2C1A9A888600CAB337 /* WebVC.m */; };
 		2FB12BCA1742BF6200414268 /* InterfaceViewVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB12BC91742BF6200414268 /* InterfaceViewVariables.m */; };
 		2FC58F8D1756EDB1003968E4 /* FilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC58F8C1756EDB1003968E4 /* FilterModel.m */; };
 		2FD65C4B17377201001C9AFB /* RunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD65C4A17377201001C9AFB /* RunViewController.m */; };
@@ -78,18 +75,6 @@
 		2F07661F174AFED20091D62D /* UIApplicationNetworkActivityCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIApplicationNetworkActivityCounter.h; sourceTree = "<group>"; };
 		2F076620174AFED20091D62D /* UIApplicationNetworkActivityCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationNetworkActivityCounter.m; sourceTree = "<group>"; };
 		2F076628174B3A360091D62D /* Graph-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graph-icon.png"; sourceTree = "<group>"; };
-		2F136F1F17456EAC00F8F7AE /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		2F136F2017456EAC00F8F7AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		2F136F2117456EAC00F8F7AE /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-ES"; path = "es-ES.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
-		2F136F2217456EAC00F8F7AE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		2F136F2317456EAC00F8F7AE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
-		2F136F2417456EAC00F8F7AE /* SVModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVModalWebViewController.h; sourceTree = "<group>"; };
-		2F136F2517456EAC00F8F7AE /* SVModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVModalWebViewController.m; sourceTree = "<group>"; };
-		2F136F2617456EAC00F8F7AE /* SVWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVWebViewController.bundle; sourceTree = "<group>"; };
-		2F136F2717456EAC00F8F7AE /* SVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVWebViewController.h; sourceTree = "<group>"; };
-		2F136F2817456EAC00F8F7AE /* SVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewController.m; sourceTree = "<group>"; };
-		2F136F2917456EAC00F8F7AE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
-		2F136F2A17456EAC00F8F7AE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
 		2F136F2F17456FC500F8F7AE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2F136F311746D49000F8F7AE /* LevelIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelIndicatorView.h; sourceTree = "<group>"; };
 		2F136F321746D49200F8F7AE /* LevelIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelIndicatorView.m; sourceTree = "<group>"; };
@@ -144,6 +129,8 @@
 		2F9172D91875375F0073AB7F /* CaliFlows copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CaliFlows copy-Info.plist"; path = "/Users/gregorylee/Documents/Iphone/Dreamflows/CaliFlows copy-Info.plist"; sourceTree = "<absolute>"; };
 		2F9884F71826149E000C561F /* DFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFParser.h; sourceTree = "<group>"; };
 		2F9884F81826149E000C561F /* DFParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFParser.m; sourceTree = "<group>"; };
+		2F9B3B2B1A9A888600CAB337 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		2F9B3B2C1A9A888600CAB337 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		2FB12BC81742BF6200414268 /* InterfaceViewVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceViewVariables.h; sourceTree = "<group>"; };
 		2FB12BC91742BF6200414268 /* InterfaceViewVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceViewVariables.m; sourceTree = "<group>"; };
 		2FC58F8B1756EDB1003968E4 /* FilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterModel.h; sourceTree = "<group>"; };
@@ -194,19 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F136F1D17456EAC00F8F7AE /* SVWebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2F136F1E17456EAC00F8F7AE /* SVWebViewController.strings */,
-				2F136F2417456EAC00F8F7AE /* SVModalWebViewController.h */,
-				2F136F2517456EAC00F8F7AE /* SVModalWebViewController.m */,
-				2F136F2617456EAC00F8F7AE /* SVWebViewController.bundle */,
-				2F136F2717456EAC00F8F7AE /* SVWebViewController.h */,
-				2F136F2817456EAC00F8F7AE /* SVWebViewController.m */,
-			);
-			path = SVWebViewController;
-			sourceTree = "<group>";
-		};
 		2F433D3C19CD365E00B3B374 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +198,8 @@
 				2F656A47175D459B00405FD6 /* AddToFavsVC.m */,
 				2F773109174F0F8E00915C13 /* SearchFiltersViewController.h */,
 				2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */,
+				2F9B3B2B1A9A888600CAB337 /* WebVC.h */,
+				2F9B3B2C1A9A888600CAB337 /* WebVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -318,7 +294,6 @@
 				2FF2AFCE17342C8E005E5E70 /* DFDataController.m */,
 				2F9884F71826149E000C561F /* DFParser.h */,
 				2F9884F81826149E000C561F /* DFParser.m */,
-				2F136F1D17456EAC00F8F7AE /* SVWebViewController */,
 				2F817A061731E2EA005F88E2 /* Supporting Files */,
 			);
 			path = Dreamflows;
@@ -474,8 +449,6 @@
 				2F73EC8B173C892000C73A9E /* UpAccessory@2x.png in Resources */,
 				2F73EC8C173C892000C73A9E /* UpAccessoryWhite.png in Resources */,
 				2F73EC8D173C892000C73A9E /* UpAccessoryWhite@2x.png in Resources */,
-				2F136F2B17456EAC00F8F7AE /* SVWebViewController.strings in Resources */,
-				2F136F2D17456EAC00F8F7AE /* SVWebViewController.bundle in Resources */,
 				2F076629174B3A360091D62D /* Graph-icon.png in Resources */,
 				2F9029821769334300C5B1AF /* 20130511-Kaweah-138.jpg in Resources */,
 				2F9029D6176EE77900C5B1AF /* kayak_57.png in Resources */,
@@ -542,9 +515,8 @@
 				2FD65C5117382F35001C9AFB /* GageCell.m in Sources */,
 				2F73EC1D173B891200C73A9E /* FavoriteRunsTVC.m in Sources */,
 				2FB12BCA1742BF6200414268 /* InterfaceViewVariables.m in Sources */,
-				2F136F2C17456EAC00F8F7AE /* SVModalWebViewController.m in Sources */,
-				2F136F2E17456EAC00F8F7AE /* SVWebViewController.m in Sources */,
 				2F136F331746D49200F8F7AE /* LevelIndicatorView.m in Sources */,
+				2F9B3B2D1A9A888600CAB337 /* WebVC.m in Sources */,
 				2F076621174AFED20091D62D /* UIApplicationNetworkActivityCounter.m in Sources */,
 				2F77310B174F0F8E00915C13 /* SearchFiltersViewController.m in Sources */,
 				2FC58F8D1756EDB1003968E4 /* FilterModel.m in Sources */,
@@ -576,20 +548,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2F136F1E17456EAC00F8F7AE /* SVWebViewController.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F136F1F17456EAC00F8F7AE /* da */,
-				2F136F2017456EAC00F8F7AE /* en */,
-				2F136F2117456EAC00F8F7AE /* es-ES */,
-				2F136F2217456EAC00F8F7AE /* es */,
-				2F136F2317456EAC00F8F7AE /* fr */,
-				2F136F2917456EAC00F8F7AE /* zh-Hans */,
-				2F136F2A17456EAC00F8F7AE /* zh-Hant */,
-			);
-			name = SVWebViewController.strings;
-			sourceTree = "<group>";
-		};
 		2F2C4AB219D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

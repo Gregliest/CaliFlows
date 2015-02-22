@@ -1,4 +1,8 @@
 #import "GageViewController.h"
+#import "DFDataController.h"
+#import "InterfaceViewVariables.h"
+#import "LevelIndicatorView.h"
+#import "WebVC.h"
 
 @interface GageViewController () <UITableViewDataSource, UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *gageLabel;
@@ -76,11 +80,9 @@
         }
     }
     if ([segue.identifier isEqualToString:@"Graph Segue"]) {
-        SVModalWebViewController *webController = [segue destinationViewController];
-        NSURL *URL = [NSURL URLWithString:self.gage.graphLink];
-        webController = [webController initWithURL:URL];
-        webController.modalPresentationStyle = UIModalPresentationPageSheet;
-        webController.availableActions = SVWebViewControllerAvailableActionsOpenInSafari | SVWebViewControllerAvailableActionsOpenInChrome | SVWebViewControllerAvailableActionsCopyLink | SVWebViewControllerAvailableActionsMailLink;
+        WebVC *webController = [segue destinationViewController];
+        NSURL *url = [NSURL URLWithString:self.gage.graphLink];
+        webController.url = url;
     }
 }
 
