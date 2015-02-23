@@ -27,11 +27,11 @@
     
     [self setTitle:@"Gage Info"];
     [self setupView];
-    [self refreshView];
+    [self updateView];
     
     //Add data notification handlers
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,6 +39,7 @@
     [self.runTableView deselectRowAtIndexPath:[self.runTableView indexPathForSelectedRow] animated:animated];
 }
 
+// Style the UI.
 - (void)setupView {
     [self.gageLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE_LARGE]];
     self.gageLabel.textColor = [InterfaceViewVariables darkText];
@@ -51,21 +52,24 @@
     self.graphWebView.scalesPageToFit = YES;
 }
 
-- (void)refreshView {
+// Display the current gage.
+- (void)updateView {
     self.gageLabel.text = self.gage.name;
     self.flowLabel.text = [self flowText:self.gage];
     self.timeLabel.text = self.gage.dateFlowUpdate;
     
+    // Load the graph if there's a graph link.
     if (self.gage.graphLink.length > 0) {
         NSURL *url = [NSURL URLWithString:self.gage.graphLink];
         NSURLRequest* request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30];
         [self.graphWebView loadRequest:request];
     } else {
-        [self disableGraph];
+        [self collapseGraph];
     }
 }
 
-- (void)disableGraph {
+// Collapses and disables the graph web view.  
+- (void)collapseGraph {
     self.graphButton.userInteractionEnabled = NO;
     self.graphButton.frame = CGRectMake(0, 0, 0, 0);
     
@@ -87,7 +91,7 @@
 -(void)setGage:(Gage *)gage {
     _gage = gage;
     self.runs = [NSArray arrayWithArray:[gage.runsFromGage allObjects]];
-    [self refreshView];
+    [self updateView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

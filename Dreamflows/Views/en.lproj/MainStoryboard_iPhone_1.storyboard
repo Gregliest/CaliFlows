@@ -1072,7 +1072,7 @@
                     <navigationItem key="navigationItem" id="naW-hL-RZq">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4ia-rP-3jy">
                             <connections>
-                                <action selector="refresh:" destination="Y1U-sF-Zbk" id="tzB-jp-atg"/>
+                                <action selector="refreshFlows:" destination="Y1U-sF-Zbk" id="Ivk-t7-VVO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1081,7 +1081,6 @@
                         <outlet property="favorite" destination="mKW-sW-uOc" id="syQ-NY-Mo6"/>
                         <outlet property="flowLabel" destination="q58-7p-LvH" id="T0b-Gc-zEV"/>
                         <outlet property="levelIndicator" destination="GkY-Wd-OId" id="ur1-uR-XAl"/>
-                        <outlet property="refresh" destination="4ia-rP-3jy" id="ail-4P-zTv"/>
                         <outlet property="riverLabel" destination="NHl-oZ-r5S" id="h5y-jz-mHG"/>
                         <outlet property="runLabel" destination="bRx-kS-bXC" id="Did-Ao-Q5b"/>
                         <outlet property="tableView" destination="w9V-fb-8lF" id="3F5-bd-L3n"/>

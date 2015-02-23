@@ -1,5 +1,6 @@
 #import "Run+Dreamflows.h"
 #import "Gage.h"
+#import "DFAppDelegate.h"
 
 @implementation Run (Dreamflows)
 
@@ -107,10 +108,9 @@
     return r;
 }
 
-
-
-
-
-
+-(void)toggleFavorite {
+    self.favorite = [[NSNumber alloc] initWithBool:![self.favorite boolValue]];
+    [(DFAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
+}
 
 @end

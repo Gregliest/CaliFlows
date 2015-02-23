@@ -10,4 +10,6 @@
           withNumber:(int) number;
 
 +(Gage *)getHighestGage:(Run *) run;
+
+-(void)toggleFavorite;
 @end
