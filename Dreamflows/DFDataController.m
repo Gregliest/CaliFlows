@@ -274,6 +274,24 @@
     self.updatingFlows = NO;
 }
 
+// Builds the region records and adds the relationships to the gages.  Calls itself on the write thread.
+-(void) loadRegions {
+    [self saveInBackground:^(NSManagedObjectContext *context) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Gage"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sortNumber" ascending:YES]];
+        NSArray *allGages = [context executeFetchRequest:request error:nil];
+        
+        //Make the regions
+        for (Gage *gage in allGages) {
+            // This is not performant, but it doesn't really matter because of the limited number of records, and this is happening on a background thread.
+            Region *region = [Region regionWithName:gage.regionString usingManagedContext:context];
+            gage.region = region;
+        }
+    } completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:REGION_FINISHED_LOADING_NOTIFICATION object:nil];
+    }];
+}
+
 //called by the gage finished notification, so that we know that all of the gages have loaded before adding the descriptions.
 -(void) loadDescriptions {
     //Load Description Page
@@ -296,6 +314,7 @@
             [self parseRunsAndAddToDatabase:websites withContext:context];
             [self updateBestGages:context]; //To force an update of the best gages, in case the flows have already been updated. 
         } completion:^{
+            [self loadRegions];
             [self updateFlows];
             [[NSNotificationCenter defaultCenter] postNotificationName:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
             NSLog(@"Finished Updating Runs in main thread %@", [DFParser currentTime]);
@@ -343,9 +362,9 @@
             }
             thisGage.runsFromGage = runsFromGage;
             if(i == 0) {
-                thisGage.region = [DFParser findRegion:regions withIndex:nameRange.location];
+                thisGage.regionString = [DFParser findRegion:regions withIndex:nameRange.location];
             } else {
-                thisGage.region = states[i];
+                thisGage.regionString = states[i];
             }
         }
     }

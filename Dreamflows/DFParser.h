@@ -5,6 +5,9 @@
 #define LINK @"link"
 #define CACHE @"cache"
 
+/**
+ This is the dumping ground for all sorts of horrendous code dealing with parsing the dreamflows website.  It is very specific, poorly written, fragile, and I was unaware of the existence of parsing libraries when I wrote it.  Hopefully it will be rendered obselete when I get around to creating my own database on Parse.  For now, touch at your own risk.  
+ */
 @interface DFParser : NSObject
 +(NSArray *) parseFlows:(NSArray *) records;
 +(NSArray *) parseRegions:(NSString *) website;

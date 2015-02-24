@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="DatabaseMetaData" representedClassName="DatabaseMetaData" syncable="YES">
         <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastUpdateSpecial" optional="YES" attributeType="Date" syncable="YES"/>
@@ -11,11 +11,17 @@
         <attribute name="flowUnit" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="graphLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regionString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sortNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weatherLink" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bestRuns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Run" inverseName="bestGage" inverseEntity="Run" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="gage" inverseEntity="Region" syncable="YES"/>
         <relationship name="runsFromGage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Run" inverseName="gages" inverseEntity="Run" syncable="YES"/>
+    </entity>
+    <entity name="Region" representedClassName="Region" syncable="YES">
+        <attribute name="isIncluded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gage" inverseName="region" inverseEntity="Gage" syncable="YES"/>
     </entity>
     <entity name="Run" representedClassName="Run" syncable="YES">
         <attribute name="deprecated" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -35,8 +41,9 @@
         <relationship name="gages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gage" inverseName="runsFromGage" inverseEntity="Gage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Gage" positionX="7" positionY="189" width="128" height="210"/>
-        <element name="Run" positionX="448" positionY="29" width="128" height="268"/>
         <element name="DatabaseMetaData" positionX="207" positionY="63" width="128" height="73"/>
+        <element name="Gage" positionX="7" positionY="189" width="128" height="223"/>
+        <element name="Run" positionX="448" positionY="29" width="128" height="268"/>
+        <element name="Region" positionX="207" positionY="171" width="128" height="88"/>
     </elements>
 </model>

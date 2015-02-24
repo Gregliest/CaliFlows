@@ -14,9 +14,6 @@
 // Regions to be included in all modes
 @property (strong, nonatomic) NSArray *regions;
 
-// The full data set, for quick filtering and searching
-@property (strong, nonatomic) NSDictionary *gagesByRegion;
-
 // Data for the table view in normal and filtered mode.
 @property (strong, nonatomic) NSDictionary *filteredGagesByRegion;
 @property (strong, nonatomic) FilterModel * filterModel;
@@ -58,13 +55,17 @@
     //Add data notification handlers
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopLoadingSpinner) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:DESCRIPTION_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:REGION_FINISHED_LOADING_NOTIFICATION object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-    [self startLoadingSpinner];
+    
+    if (self.regions.count == 0) {
+        [self startLoadingSpinner];
+    }
+    
     [self refreshGagesFromDatabase];
     [self refreshFlows];
 }
@@ -101,20 +102,18 @@
     NSLog(@"Refreshing from database");
     
     self.regions = [self getRegions];
-    self.gagesByRegion = [Gage gagesDictionaryForRegions:self.regions];
     [self filterGages];
     
-//    [self.loadingIndicator stopAnimating];
     NSLog(@"Refreshed from database");
 }
 
 -(void)filterGages {
-    self.filteredGagesByRegion = [self.filterModel filterDictionary:self.gagesByRegion];
+    self.filteredGagesByRegion = [self filteredGagesInRegions:self.regions withFilterModel:self.filterModel];
     [self.tableView reloadData];
 }
 
 -(NSArray *)getRegions {
-    return [Gage regions];
+    return [Region allRegions];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -132,7 +131,8 @@
                     if(self.searchDisplayController.active) {
                         thisGage = self.searchedGages[indexPath.row];
                     } else {
-                        NSArray * regionGages = self.filteredGagesByRegion[self.regions[indexPath.section]];
+                        Region *region = self.regions[indexPath.section];
+                        NSArray * regionGages = self.filteredGagesByRegion[region.name];
                         thisGage = regionGages[indexPath.row];
                     }
                     [segue.destinationViewController performSelector:@selector(setGage:) withObject:thisGage];
@@ -150,7 +150,7 @@
 
 -(void)stopLoadingSpinner {
     // If there are no gages, keep spinning!
-    if (self.gagesByRegion.count > 0) {
+    if (self.regions.count > 0) {
         // Delay for a half second so that it looks like the refresh button is doing something.  
         [self performSelector:@selector(onTick) withObject:nil afterDelay:0.5];
     }
@@ -188,7 +188,7 @@
 -(void) filter:(NSString *) searchText withScope:(NSString *)scope {
     //[self.filteredGages removeAllObjects];
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    self.searchedGages = [self gagesFromPredicate:predicate inDictionary:self.gagesByRegion];
+    self.searchedGages = [self gagesFromPredicate:predicate inRegions:self.regions];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -212,7 +212,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(self.regions.count > section) {
-        return self.regions[section];
+        Region *region = self.regions[section];
+        return region.name;
     } else {
         return @"";
     }
@@ -247,7 +248,8 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.searchedGages count];
     } else {
-        return [self.filteredGagesByRegion[self.regions[section]] count];
+        Region *region = self.regions[section];
+        return [self.filteredGagesByRegion[region.name] count];
     }
 }
 
@@ -263,7 +265,8 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         gage = self.searchedGages[indexPath.row];
     } else {
-        NSArray * regionGages = self.filteredGagesByRegion[self.regions[indexPath.section]];
+        Region *region = self.regions[indexPath.section];
+        NSArray * regionGages = self.filteredGagesByRegion[region.name];
         gage = regionGages[indexPath.row];
     }
     
@@ -278,11 +281,19 @@
 
 #pragma mark - Helpers
 
--(NSArray *)gagesFromPredicate:(NSPredicate *)predicate inDictionary:(NSDictionary *)dictionary {
+-(NSDictionary *)filteredGagesInRegions:(NSArray *)regions withFilterModel:(FilterModel *)model {
+    NSMutableDictionary *filteredGagesDictionary = [NSMutableDictionary new];
+    for (Region *region in regions) {
+        NSArray *filteredGages = [model filterArray:[region gagesBySortNumber]];
+        [filteredGagesDictionary setObject:filteredGages forKey:region.name];
+    }
+    return filteredGagesDictionary;
+}
+
+-(NSArray *)gagesFromPredicate:(NSPredicate *)predicate inRegions:(NSArray *)regions {
     NSMutableArray *gages = [NSMutableArray new];
-    for (NSString *key in dictionary) {
-        NSArray *array = dictionary[key];
-        [gages addObjectsFromArray:[array filteredArrayUsingPredicate:predicate]];
+    for (Region *region in regions) {
+        [gages addObjectsFromArray:[[region gagesBySortNumber] filteredArrayUsingPredicate:predicate]];
     }
     return gages;
 }
