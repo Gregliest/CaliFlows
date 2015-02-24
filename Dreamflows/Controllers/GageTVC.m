@@ -90,11 +90,11 @@
 }
 
 - (IBAction)refreshPressed:(UIBarButtonItem *)sender {
+    [self startLoadingSpinner];
     [self refreshFlows];
 }
 
 - (void)refreshFlows {
-    [self startLoadingSpinner];
     [[DFDataController sharedManager] updateFlows];
 }
 
@@ -113,7 +113,7 @@
 }
 
 -(NSArray *)getRegions {
-    return [Region allRegions];
+    return [Region includedRegions];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

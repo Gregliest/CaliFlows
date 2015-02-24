@@ -16,6 +16,8 @@
 		2F2DE65C1A9C3BAD00314E00 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE65B1A9C3BAD00314E00 /* Region.m */; };
 		2F2DE6621A9C3E4900314E00 /* Gage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE6611A9C3E4900314E00 /* Gage.m */; };
 		2F2DE6681A9C400400314E00 /* Region+Dreamflows.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE6671A9C400400314E00 /* Region+Dreamflows.m */; };
+		2F2DE66B1A9D059D00314E00 /* RegionChooserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE66A1A9D059D00314E00 /* RegionChooserCell.m */; };
+		2F2DE66E1A9D062500314E00 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE66D1A9D062500314E00 /* SettingsVC.m */; };
 		2F4B4C89178A088A00BB7D66 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C88178A088A00BB7D66 /* Run.m */; };
 		2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A47175D459B00405FD6 /* AddToFavsVC.m */; };
 		2F656A4B175DE74300405FD6 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A4A175DE74300405FD6 /* RunCell.m */; };
@@ -88,6 +90,10 @@
 		2F2DE6611A9C3E4900314E00 /* Gage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gage.m; sourceTree = "<group>"; };
 		2F2DE6661A9C400400314E00 /* Region+Dreamflows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Region+Dreamflows.h"; sourceTree = "<group>"; };
 		2F2DE6671A9C400400314E00 /* Region+Dreamflows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Region+Dreamflows.m"; sourceTree = "<group>"; };
+		2F2DE6691A9D059D00314E00 /* RegionChooserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionChooserCell.h; sourceTree = "<group>"; };
+		2F2DE66A1A9D059D00314E00 /* RegionChooserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionChooserCell.m; sourceTree = "<group>"; };
+		2F2DE66C1A9D062500314E00 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		2F2DE66D1A9D062500314E00 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 		2F4B4C87178A088A00BB7D66 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
 		2F4B4C88178A088A00BB7D66 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
 		2F656A46175D459B00405FD6 /* AddToFavsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToFavsVC.h; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 				2F77310A174F0F8E00915C13 /* SearchFiltersViewController.m */,
 				2F9B3B2B1A9A888600CAB337 /* WebVC.h */,
 				2F9B3B2C1A9A888600CAB337 /* WebVC.m */,
+				2F2DE66C1A9D062500314E00 /* SettingsVC.h */,
+				2F2DE66D1A9D062500314E00 /* SettingsVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +226,8 @@
 				2FD65C5017382F34001C9AFB /* GageCell.m */,
 				2F656A49175DE74300405FD6 /* RunCell.h */,
 				2F656A4A175DE74300405FD6 /* RunCell.m */,
+				2F2DE6691A9D059D00314E00 /* RegionChooserCell.h */,
+				2F2DE66A1A9D059D00314E00 /* RegionChooserCell.m */,
 				2F136F311746D49000F8F7AE /* LevelIndicatorView.h */,
 				2F136F321746D49200F8F7AE /* LevelIndicatorView.m */,
 				2FB12BC81742BF6200414268 /* InterfaceViewVariables.h */,
@@ -514,9 +524,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F817A0C1731E2EA005F88E2 /* main.m in Sources */,
+				2F2DE66B1A9D059D00314E00 /* RegionChooserCell.m in Sources */,
 				2F817A101731E2EA005F88E2 /* DFAppDelegate.m in Sources */,
 				2F817A3F1731E602005F88E2 /* GageTVC.m in Sources */,
 				2F817A4217324DBD005F88E2 /* GageViewController.m in Sources */,
+				2F2DE66E1A9D062500314E00 /* SettingsVC.m in Sources */,
 				2FF2AFCF17342C8E005E5E70 /* DFDataController.m in Sources */,
 				2FF2B01F17344836005E5E70 /* DreamflowsModel.xcdatamodeld in Sources */,
 				2FF2B02E17347F9E005E5E70 /* Gage+Dreamflows.m in Sources */,

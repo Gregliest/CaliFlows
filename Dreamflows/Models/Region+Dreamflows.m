@@ -1,5 +1,6 @@
 #import "Region+Dreamflows.h"
 #import "DFDataController.h"
+#import "DFAppDelegate.h"
 #import <objc/runtime.h>
 
 
@@ -41,6 +42,14 @@ static void *MyClassResultKey;
     return [dfFetcher getEntries:request];
 }
 
++(NSArray *)includedRegions {
+    DFDataController *dfFetcher = [DFDataController sharedManager];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Region"];
+    request.predicate = [NSPredicate predicateWithFormat:@"isIncluded = %@", [NSNumber numberWithBool:YES]];
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    return [dfFetcher getEntries:request];
+}
+
 - (NSArray *)gagesBySortNumber {
     NSArray *result = objc_getAssociatedObject(self, &MyClassResultKey);
     if (result == nil) {
@@ -51,4 +60,8 @@ static void *MyClassResultKey;
     return result;
 }
 
+-(void)toggleIsIncluded {
+    self.isIncluded = [[NSNumber alloc] initWithBool:![self.isIncluded boolValue]];
+    [(DFAppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
+}
 @end

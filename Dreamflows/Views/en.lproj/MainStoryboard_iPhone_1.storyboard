@@ -611,6 +611,77 @@
             </objects>
             <point key="canvasLocation" x="1458" y="1609"/>
         </scene>
+        <!--SettingsVC-->
+        <scene sceneID="Kg4-xG-TmB">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4B8-6O-3fV" customClass="SettingsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qv8-vp-0df"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uya-Me-8cn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qF0-9u-8nk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-xV-LG3">
+                                <rect key="frame" x="0.0" y="64" width="320" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Region" id="3R3-hd-wpb" customClass="RegionChooserCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3R3-hd-wpb" id="Ovn-dd-gph">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVH-eZ-3xw">
+                                                    <rect key="frame" x="8" y="12" width="247" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-yf-Jse">
+                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchPressed:" destination="3R3-hd-wpb" eventType="valueChanged" id="L9L-zT-x3p"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qVH-eZ-3xw" firstAttribute="leading" secondItem="Ovn-dd-gph" secondAttribute="leadingMargin" id="1JZ-Ts-t9I"/>
+                                                <constraint firstAttribute="centerY" secondItem="vpG-yf-Jse" secondAttribute="centerY" id="M0X-we-5LW"/>
+                                                <constraint firstItem="vpG-yf-Jse" firstAttribute="trailing" secondItem="Ovn-dd-gph" secondAttribute="trailingMargin" id="MW4-YL-TJT"/>
+                                                <constraint firstAttribute="centerY" secondItem="qVH-eZ-3xw" secondAttribute="centerY" constant="-0.5" id="kUq-tT-OXf"/>
+                                                <constraint firstItem="vpG-yf-Jse" firstAttribute="leading" secondItem="qVH-eZ-3xw" secondAttribute="trailing" constant="8" id="qlc-Ox-RhB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="regionSwitch" destination="vpG-yf-Jse" id="qao-EW-9L9"/>
+                                            <outlet property="titleLabel" destination="qVH-eZ-3xw" id="ksY-4y-J7w"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4B8-6O-3fV" id="yEw-hP-bTL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yrg-xV-LG3" firstAttribute="top" secondItem="qv8-vp-0df" secondAttribute="bottom" id="8Aq-fr-hiU"/>
+                            <constraint firstAttribute="centerX" secondItem="yrg-xV-LG3" secondAttribute="centerX" id="Gvl-L5-oRW"/>
+                            <constraint firstItem="yrg-xV-LG3" firstAttribute="width" secondItem="qF0-9u-8nk" secondAttribute="width" id="J2a-9S-8jB"/>
+                            <constraint firstItem="Uya-Me-8cn" firstAttribute="top" secondItem="yrg-xV-LG3" secondAttribute="bottom" constant="8" symbolic="YES" id="MiX-XY-uPk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tf6-dP-2M2"/>
+                    <connections>
+                        <outlet property="tableView" destination="yrg-xV-LG3" id="RDr-wd-I7H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huW-HC-ytY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="-534"/>
+        </scene>
         <!--GageTVC-->
         <scene sceneID="aSh-sU-Rca">
             <objects>
@@ -752,6 +823,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eJ8-d1-SNs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="pIG-HX-tb8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="4B8-6O-3fV" kind="push" identifier="Settings Segue" id="GW3-aH-6Os"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="dgA-zk-y0p">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
