@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *difficultyLabel;
 @property (weak, nonatomic) IBOutlet LevelIndicatorView *levelIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *favorite;
+@property (weak, nonatomic) IBOutlet UIButton *graphButton;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) Gage * gage;
@@ -62,6 +63,12 @@
     self.timeLabel.text = self.gage.dateFlowUpdate;
     
     self.levelIndicator.color = [InterfaceViewVariables flowColors][self.gage.colorCode];
+    
+    // Disable the graph button if there's no graph link
+    if (self.gage.graphLink.length <= 0) {
+        self.graphButton.enabled = NO;
+        self.graphButton.hidden = YES;
+    }
     
     [self updateFavoriteButtonColor];
 }

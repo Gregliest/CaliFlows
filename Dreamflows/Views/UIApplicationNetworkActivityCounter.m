@@ -22,13 +22,13 @@
     dispatch_async(self.counterQueue, ^{
         if(networkActivityIndicatorVisible) {
             self.networkCounter++;
-            //NSLog(@"Network counter: %d", self.networkCounter);
+            NSLog(@"Network counter: %d", self.networkCounter);
             if(self.networkCounter >= 1) {
                 super.networkActivityIndicatorVisible = YES;
             }
         } else {
             self.networkCounter--;
-            //NSLog(@"Network counter: %d", self.networkCounter);
+            NSLog(@"Network counter: %d", self.networkCounter);
             if(self.networkCounter == 0) {
                 super.networkActivityIndicatorVisible = NO;
             } else if (self.networkCounter < 0) {
