@@ -4,10 +4,18 @@
 
 @interface SettingsVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *regionLabel;
+@property (weak, nonatomic) IBOutlet UIView *labelBackground;
 @property (strong, nonatomic) NSArray *regions;
 @end
 
 @implementation SettingsVC
+
+-(void)viewWillAppear:(BOOL)animated {
+    self.regionLabel.textColor = [InterfaceViewVariables darkText];
+    self.regionLabel.font = [UIFont boldSystemFontOfSize:FONT_SIZE_LARGE];
+    self.labelBackground.backgroundColor = [InterfaceViewVariables DFLightGray];
+}
 
 -(NSArray *)regions {
     if (!_regions) {
@@ -17,10 +25,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Regions";
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

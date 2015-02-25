@@ -1,5 +1,6 @@
 #import "InterfaceViewVariables.h"
 
+#define LIGHT_GRAY_COLOR_HEX @"#e0e0e0"
 #define BLUE_COLOR_HEX @"#17B1C0"
 #define DARK_BLUE_COLOR_HEX @"#0F6486"
 #define GREEN_COLOR_HEX @"#5EB874"
@@ -12,7 +13,7 @@
 
 + (NSDictionary *) flowColors {
     NSArray * flows = [InterfaceViewVariables flowKeys];
-    NSArray * colors = [[NSArray alloc] initWithObjects:[self DFLightGray], [self DFBlue], [self DFYellow], [self DFGreen], [self DFGreen], [self DFRed], nil];
+    NSArray * colors = [[NSArray alloc] initWithObjects:[self DFGray], [self DFBlue], [self DFYellow], [self DFGreen], [self DFGreen], [self DFRed], nil];
     return [NSDictionary dictionaryWithObjects:colors forKeys:flows];
 }
 
@@ -27,6 +28,10 @@
 }
 
 + (UIColor *)DFLightGray {
+    return [InterfaceViewVariables colorFromHexString:LIGHT_GRAY_COLOR_HEX];
+}
+
++ (UIColor *)DFGray {
     return [UIColor lightGrayColor];
 }
 

@@ -11,7 +11,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.continueButton.layer.cornerRadius = 8;
-    [self.continueButton setBackgroundColor:[InterfaceViewVariables titleBarColor]];
+    [self.continueButton setBackgroundColor:[InterfaceViewVariables DFWhite]];
     
     //Start the updating process
     [[DFDataController sharedManager] updateGages];

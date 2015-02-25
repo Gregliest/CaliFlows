@@ -20,4 +20,5 @@
 
 + (UIColor *)DFWhite;
 + (UIColor *)DFDarkGray;
++ (UIColor *)DFLightGray;
 @end

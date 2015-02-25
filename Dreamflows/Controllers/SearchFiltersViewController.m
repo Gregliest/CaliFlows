@@ -12,8 +12,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [InterfaceViewVariables backgroundColor];
-    // Do any additional setup after loading the view.
     [self sortButtonCollections];
     
     [self updateButtonsFromModel];
