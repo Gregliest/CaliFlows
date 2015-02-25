@@ -18,6 +18,10 @@
 		2F2DE6681A9C400400314E00 /* Region+Dreamflows.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE6671A9C400400314E00 /* Region+Dreamflows.m */; };
 		2F2DE66B1A9D059D00314E00 /* RegionChooserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE66A1A9D059D00314E00 /* RegionChooserCell.m */; };
 		2F2DE66E1A9D062500314E00 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DE66D1A9D062500314E00 /* SettingsVC.m */; };
+		2F2DE6701A9E3AAC00314E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DE66F1A9E3AAC00314E00 /* LaunchScreen.storyboard */; };
+		2F2DE6721A9E3AC800314E00 /* LaunchScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DE6711A9E3AC800314E00 /* LaunchScreen.jpg */; };
+		2F2DE6781A9E3CDD00314E00 /* Launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DE6771A9E3CDD00314E00 /* Launch@2x.png */; };
+		2F2DE67C1A9E417600314E00 /* Launch-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DE67B1A9E417600314E00 /* Launch-568h@2x.png */; };
 		2F4B4C89178A088A00BB7D66 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C88178A088A00BB7D66 /* Run.m */; };
 		2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A47175D459B00405FD6 /* AddToFavsVC.m */; };
 		2F656A4B175DE74300405FD6 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A4A175DE74300405FD6 /* RunCell.m */; };
@@ -45,7 +49,6 @@
 		2F817A341731E2EB005F88E2 /* DreamflowsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F817A331731E2EB005F88E2 /* DreamflowsTests.m */; };
 		2F817A3F1731E602005F88E2 /* GageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F817A3E1731E602005F88E2 /* GageTVC.m */; };
 		2F817A4217324DBD005F88E2 /* GageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F817A4117324DBD005F88E2 /* GageViewController.m */; };
-		2F9029821769334300C5B1AF /* 20130511-Kaweah-138.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029811769334300C5B1AF /* 20130511-Kaweah-138.jpg */; };
 		2F902985176947EE00C5B1AF /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F902984176947EE00C5B1AF /* SplashScreenVC.m */; };
 		2F9029D6176EE77900C5B1AF /* kayak_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029D5176EE77800C5B1AF /* kayak_57.png */; };
 		2F9029D8176EE78C00C5B1AF /* kayak_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9029D7176EE78B00C5B1AF /* kayak_114.png */; };
@@ -55,9 +58,6 @@
 		2FC58F8D1756EDB1003968E4 /* FilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC58F8C1756EDB1003968E4 /* FilterModel.m */; };
 		2FD65C4B17377201001C9AFB /* RunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD65C4A17377201001C9AFB /* RunViewController.m */; };
 		2FD65C5117382F35001C9AFB /* GageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD65C5017382F34001C9AFB /* GageCell.m */; };
-		2FEF424F176EFA67003459A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF424E176EFA67003459A8 /* Default.png */; };
-		2FEF4251176EFA6D003459A8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF4250176EFA6D003459A8 /* Default@2x.png */; };
-		2FEF4253176EFA74003459A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FEF4252176EFA74003459A8 /* Default-568h@2x.png */; };
 		2FF2AFCF17342C8E005E5E70 /* DFDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2AFCE17342C8E005E5E70 /* DFDataController.m */; };
 		2FF2B01F17344836005E5E70 /* DreamflowsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2B01D17344836005E5E70 /* DreamflowsModel.xcdatamodeld */; };
 		2FF2B02E17347F9E005E5E70 /* Gage+Dreamflows.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2B02D17347F9D005E5E70 /* Gage+Dreamflows.m */; };
@@ -94,6 +94,10 @@
 		2F2DE66A1A9D059D00314E00 /* RegionChooserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionChooserCell.m; sourceTree = "<group>"; };
 		2F2DE66C1A9D062500314E00 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
 		2F2DE66D1A9D062500314E00 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
+		2F2DE66F1A9E3AAC00314E00 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2F2DE6711A9E3AC800314E00 /* LaunchScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LaunchScreen.jpg; sourceTree = "<group>"; };
+		2F2DE6771A9E3CDD00314E00 /* Launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch@2x.png"; sourceTree = "<group>"; };
+		2F2DE67B1A9E417600314E00 /* Launch-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch-568h@2x.png"; sourceTree = "<group>"; };
 		2F4B4C87178A088A00BB7D66 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
 		2F4B4C88178A088A00BB7D66 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
 		2F656A46175D459B00405FD6 /* AddToFavsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToFavsVC.h; sourceTree = "<group>"; };
@@ -133,7 +137,6 @@
 		2F817A3E1731E602005F88E2 /* GageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GageTVC.m; sourceTree = "<group>"; };
 		2F817A4017324DBD005F88E2 /* GageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GageViewController.h; sourceTree = "<group>"; };
 		2F817A4117324DBD005F88E2 /* GageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GageViewController.m; sourceTree = "<group>"; };
-		2F9029811769334300C5B1AF /* 20130511-Kaweah-138.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20130511-Kaweah-138.jpg"; sourceTree = "<group>"; };
 		2F902983176947EE00C5B1AF /* SplashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenVC.h; sourceTree = "<group>"; };
 		2F902984176947EE00C5B1AF /* SplashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenVC.m; sourceTree = "<group>"; };
 		2F9029D5176EE77800C5B1AF /* kayak_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kayak_57.png; sourceTree = "<group>"; };
@@ -152,9 +155,6 @@
 		2FD65C4A17377201001C9AFB /* RunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunViewController.m; sourceTree = "<group>"; };
 		2FD65C4F17382F34001C9AFB /* GageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GageCell.h; sourceTree = "<group>"; };
 		2FD65C5017382F34001C9AFB /* GageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GageCell.m; sourceTree = "<group>"; };
-		2FEF424E176EFA67003459A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		2FEF4250176EFA6D003459A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		2FEF4252176EFA74003459A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2FF2AFCD17342C8E005E5E70 /* DFDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFDataController.h; sourceTree = "<group>"; };
 		2FF2AFCE17342C8E005E5E70 /* DFDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFDataController.m; sourceTree = "<group>"; };
 		2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamflowsModel.xcdatamodel; sourceTree = "<group>"; };
@@ -221,6 +221,7 @@
 		2F433D3D19CD368300B3B374 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F2DE66F1A9E3AAC00314E00 /* LaunchScreen.storyboard */,
 				2F2C4AB219D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard */,
 				2FD65C4F17382F34001C9AFB /* GageCell.h */,
 				2FD65C5017382F34001C9AFB /* GageCell.m */,
@@ -241,11 +242,10 @@
 		2F73EC7B173C892000C73A9E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2F9029811769334300C5B1AF /* 20130511-Kaweah-138.jpg */,
+				2F2DE67B1A9E417600314E00 /* Launch-568h@2x.png */,
+				2F2DE6771A9E3CDD00314E00 /* Launch@2x.png */,
+				2F2DE6711A9E3AC800314E00 /* LaunchScreen.jpg */,
 				2F076628174B3A360091D62D /* Graph-icon.png */,
-				2FEF4252176EFA74003459A8 /* Default-568h@2x.png */,
-				2FEF4250176EFA6D003459A8 /* Default@2x.png */,
-				2FEF424E176EFA67003459A8 /* Default.png */,
 				2F9029D7176EE78B00C5B1AF /* kayak_114.png */,
 				2F9029D5176EE77800C5B1AF /* kayak_57.png */,
 				2F73EC7C173C892000C73A9E /* DownAccessory.png */,
@@ -464,18 +464,18 @@
 				2F73EC87173C892000C73A9E /* DownAccessory@2x.png in Resources */,
 				2F73EC88173C892000C73A9E /* DownAccessoryWhite.png in Resources */,
 				2F2C4AB419D1DAEE008C19EF /* MainStoryboard_iPhone_1.storyboard in Resources */,
+				2F2DE6721A9E3AC800314E00 /* LaunchScreen.jpg in Resources */,
 				2F73EC89173C892000C73A9E /* DownAccessoryWhite@2x.png in Resources */,
 				2F73EC8A173C892000C73A9E /* UpAccessory.png in Resources */,
 				2F73EC8B173C892000C73A9E /* UpAccessory@2x.png in Resources */,
 				2F73EC8C173C892000C73A9E /* UpAccessoryWhite.png in Resources */,
+				2F2DE6701A9E3AAC00314E00 /* LaunchScreen.storyboard in Resources */,
 				2F73EC8D173C892000C73A9E /* UpAccessoryWhite@2x.png in Resources */,
 				2F076629174B3A360091D62D /* Graph-icon.png in Resources */,
-				2F9029821769334300C5B1AF /* 20130511-Kaweah-138.jpg in Resources */,
 				2F9029D6176EE77900C5B1AF /* kayak_57.png in Resources */,
+				2F2DE67C1A9E417600314E00 /* Launch-568h@2x.png in Resources */,
 				2F9029D8176EE78C00C5B1AF /* kayak_114.png in Resources */,
-				2FEF424F176EFA67003459A8 /* Default.png in Resources */,
-				2FEF4251176EFA6D003459A8 /* Default@2x.png in Resources */,
-				2FEF4253176EFA74003459A8 /* Default-568h@2x.png in Resources */,
+				2F2DE6781A9E3CDD00314E00 /* Launch@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

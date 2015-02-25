@@ -372,14 +372,14 @@
 
 #pragma mark DB changing methods.
 
--(Gage *) addGageToDB:(NSString *) rawGageString withNumber:(NSUInteger) i withContext:(NSManagedObjectContext *) context{
+-(Gage *) addGageToDB:(NSString *)rawGageString withNumber:(int)i withContext:(NSManagedObjectContext *)context{
     //Parse and add to database
     Gage * gage = [Gage gageWithName:[DFParser parseGageName:rawGageString] usingManagedContext:context withNumber:i];
     gage.graphLink = [DFParser parseGraphLink:rawGageString];
     return gage;
 }
 
--(Run *) addRunToDB:(NSString *) rawInfo withContext:(NSManagedObjectContext *) context {
+-(Run *) addRunToDB:(NSString *)rawInfo withContext:(NSManagedObjectContext *)context {
     
     //Parse Name
     NSString * runName = [DFParser stringBetweenStrings:rawInfo startingFrom:@"width='12' border='0'>" endingAt:@"("];

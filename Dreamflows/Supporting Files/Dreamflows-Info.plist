@@ -28,6 +28,8 @@
 	<string>1.30</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard_iPhone_1</string>
 	<key>UIRequiredDeviceCapabilities</key>
