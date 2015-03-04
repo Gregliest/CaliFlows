@@ -100,6 +100,7 @@
 		2F2DE67B1A9E417600314E00 /* Launch-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch-568h@2x.png"; sourceTree = "<group>"; };
 		2F4B4C87178A088A00BB7D66 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
 		2F4B4C88178A088A00BB7D66 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
+		2F54C5FB1AA77BBA00F90B40 /* DreamflowsModel 2.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DreamflowsModel 2.0.xcdatamodel"; sourceTree = "<group>"; };
 		2F656A46175D459B00405FD6 /* AddToFavsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToFavsVC.h; sourceTree = "<group>"; };
 		2F656A47175D459B00405FD6 /* AddToFavsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToFavsVC.m; sourceTree = "<group>"; };
 		2F656A49175DE74300405FD6 /* RunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunCell.h; sourceTree = "<group>"; };
@@ -770,9 +771,10 @@
 		2FF2B01D17344836005E5E70 /* DreamflowsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2F54C5FB1AA77BBA00F90B40 /* DreamflowsModel 2.0.xcdatamodel */,
 				2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */,
 			);
-			currentVersion = 2FF2B01E17344836005E5E70 /* DreamflowsModel.xcdatamodel */;
+			currentVersion = 2F54C5FB1AA77BBA00F90B40 /* DreamflowsModel 2.0.xcdatamodel */;
 			path = DreamflowsModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
