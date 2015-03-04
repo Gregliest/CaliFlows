@@ -56,6 +56,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopLoadingSpinner) name:FLOWS_FINISHED_LOADING_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGagesFromDatabase) name:REGION_FINISHED_LOADING_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopLoadingSpinner) name:REGION_FINISHED_LOADING_NOTIFICATION object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -99,12 +100,8 @@
 }
 
 - (void)refreshGagesFromDatabase {
-    NSLog(@"Refreshing from database");
-    
     self.regions = [self getRegions];
     [self filterGages];
-    
-    NSLog(@"Refreshed from database");
 }
 
 -(void)filterGages {

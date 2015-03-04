@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -864,9 +863,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yj7-Ab-YtS">
                                 <rect key="frame" x="0.0" y="329" width="320" height="190"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="190" id="z14-MJ-kIA"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Run" textLabel="V2J-Au-S0O" detailTextLabel="k4i-4w-09z" rowHeight="48" style="IBUITableViewCellStyleSubtitle" id="LMb-M7-wSU">
                                         <rect key="frame" x="0.0" y="22" width="320" height="48"/>
@@ -941,8 +937,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="128" id="obU-AV-ZC6"/>
-                                    <constraint firstAttribute="width" secondItem="ZZQ-jQ-BUX" secondAttribute="height" multiplier="5:4" id="qaC-Xe-tQU"/>
+                                    <constraint firstAttribute="width" constant="160" id="2xC-Mz-yOD"/>
+                                    <constraint firstAttribute="height" priority="750" constant="128" id="obU-AV-ZC6"/>
                                 </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-sT-UsV">
@@ -988,6 +984,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pUg-hS-fI3"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="flowLabel" destination="zhH-vg-hbC" id="AOg-Zs-hnl"/>
@@ -1187,8 +1184,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KwK-uP-qNP">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KwK-uP-qNP">
+                                <rect key="frame" x="151" y="275" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1223,6 +1220,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="x3V-2q-x5F"/>
-        <segue reference="zDT-jK-uic"/>
+        <segue reference="akM-fG-Crc"/>
     </inferredMetricsTieBreakers>
 </document>
