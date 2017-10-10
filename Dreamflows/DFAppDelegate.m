@@ -22,7 +22,7 @@ void onUncaughtException(NSException *exception)
     [Crashlytics startWithAPIKey:@"58e7e779ba7b01ef1111b7eddedf2f7bc95c682f"];
     NSSetUncaughtExceptionHandler(&onUncaughtException);
     
-    [[UITabBar appearance] setSelectedImageTintColor:[InterfaceViewVariables titleBarColor]];
+    [[UITabBar appearance] setTintColor:[InterfaceViewVariables titleBarColor]];
     [[UINavigationBar appearance] setBarTintColor:[InterfaceViewVariables titleBarColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTintColor:[InterfaceViewVariables DFWhite]];

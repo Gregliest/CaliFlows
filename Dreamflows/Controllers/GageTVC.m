@@ -72,9 +72,6 @@
 }
 
 - (IBAction)selectedSegmentChanged:(UISegmentedControl *)sender {
-    int *x = 43/0;
-    [NSObject doesNotRecognizeSelector:nil];
-    
     NSMutableArray * boolsArray = [[NSMutableArray alloc] initWithCapacity:self.flowSegmentedControl.numberOfSegments];
     for(int i = 0; i < self.flowSegmentedControl.numberOfSegments; i++) {
         if(self.flowSegmentedControl.selectedSegmentIndex == i) {
