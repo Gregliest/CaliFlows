@@ -23,6 +23,12 @@
 		2F2DE6781A9E3CDD00314E00 /* Launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DE6771A9E3CDD00314E00 /* Launch@2x.png */; };
 		2F2DE67C1A9E417600314E00 /* Launch-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DE67B1A9E417600314E00 /* Launch-568h@2x.png */; };
 		2F4B4C89178A088A00BB7D66 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B4C88178A088A00BB7D66 /* Run.m */; };
+		2F5B0BF41F90612100DE967F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5B0BF21F90612100DE967F /* Crashlytics.framework */; };
+		2F5B0BF51F90612100DE967F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5B0BF31F90612100DE967F /* Fabric.framework */; };
+		2F5B0BF81F9061CD00DE967F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5B0BF71F9061CD00DE967F /* Security.framework */; };
+		2F5B0BFA1F9061D400DE967F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5B0BF91F9061D400DE967F /* SystemConfiguration.framework */; };
+		2F5B0BFC1F9061E600DE967F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5B0BFB1F9061E500DE967F /* libc++.tbd */; };
+		2F5B0BFE1F9061ED00DE967F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5B0BFD1F9061ED00DE967F /* libz.tbd */; };
 		2F656A48175D459B00405FD6 /* AddToFavsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A47175D459B00405FD6 /* AddToFavsVC.m */; };
 		2F656A4B175DE74300405FD6 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F656A4A175DE74300405FD6 /* RunCell.m */; };
 		2F73EC1D173B891200C73A9E /* FavoriteRunsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F73EC1C173B891200C73A9E /* FavoriteRunsTVC.m */; };
@@ -101,6 +107,12 @@
 		2F4B4C87178A088A00BB7D66 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
 		2F4B4C88178A088A00BB7D66 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
 		2F54C5FB1AA77BBA00F90B40 /* DreamflowsModel 2.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DreamflowsModel 2.0.xcdatamodel"; sourceTree = "<group>"; };
+		2F5B0BF21F90612100DE967F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		2F5B0BF31F90612100DE967F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		2F5B0BF71F9061CD00DE967F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2F5B0BF91F9061D400DE967F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2F5B0BFB1F9061E500DE967F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2F5B0BFD1F9061ED00DE967F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2F656A46175D459B00405FD6 /* AddToFavsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToFavsVC.h; sourceTree = "<group>"; };
 		2F656A47175D459B00405FD6 /* AddToFavsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToFavsVC.m; sourceTree = "<group>"; };
 		2F656A49175DE74300405FD6 /* RunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunCell.h; sourceTree = "<group>"; };
@@ -171,10 +183,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5B0BFE1F9061ED00DE967F /* libz.tbd in Frameworks */,
+				2F5B0BFC1F9061E600DE967F /* libc++.tbd in Frameworks */,
+				2F5B0BFA1F9061D400DE967F /* SystemConfiguration.framework in Frameworks */,
+				2F5B0BF81F9061CD00DE967F /* Security.framework in Frameworks */,
 				2F773108174EAE6A00915C13 /* QuartzCore.framework in Frameworks */,
 				2F136F3017456FC500F8F7AE /* MessageUI.framework in Frameworks */,
+				2F5B0BF41F90612100DE967F /* Crashlytics.framework in Frameworks */,
 				2FF2B03317358BE5005E5E70 /* CoreData.framework in Frameworks */,
 				2F817A001731E2EA005F88E2 /* UIKit.framework in Frameworks */,
+				2F5B0BF51F90612100DE967F /* Fabric.framework in Frameworks */,
 				2F817A021731E2EA005F88E2 /* Foundation.framework in Frameworks */,
 				2F817A041731E2EA005F88E2 /* CoreGraphics.framework in Frameworks */,
 				2F74AE9F190F7E78005A3EB8 /* Crashlytics.framework in Frameworks */,
@@ -264,6 +282,8 @@
 		2F8179F31731E2EA005F88E2 = {
 			isa = PBXGroup;
 			children = (
+				2F5B0BF21F90612100DE967F /* Crashlytics.framework */,
+				2F5B0BF31F90612100DE967F /* Fabric.framework */,
 				2F2A086518A35583002CE88B /* Images.xcassets */,
 				2FAE79DA18A34BCD004E7028 /* iPad */,
 				2F817A051731E2EA005F88E2 /* Dreamflows */,
@@ -286,6 +306,10 @@
 		2F8179FE1731E2EA005F88E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F5B0BFD1F9061ED00DE967F /* libz.tbd */,
+				2F5B0BFB1F9061E500DE967F /* libc++.tbd */,
+				2F5B0BF91F9061D400DE967F /* SystemConfiguration.framework */,
+				2F5B0BF71F9061CD00DE967F /* Security.framework */,
 				2F74AE9E190F7E78005A3EB8 /* Crashlytics.framework */,
 				2F773107174EAE6A00915C13 /* QuartzCore.framework */,
 				2F136F2F17456FC500F8F7AE /* MessageUI.framework */,
@@ -386,6 +410,7 @@
 				2F8179F91731E2EA005F88E2 /* Frameworks */,
 				2F8179FA1731E2EA005F88E2 /* Resources */,
 				2F74AE9D190F7E31005A3EB8 /* ShellScript */,
+				2F5B0BF61F90616E00DE967F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -428,6 +453,7 @@
 				TargetAttributes = {
 					2F8179FB1731E2EA005F88E2 = {
 						DevelopmentTeam = CGGM2TJZ65;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -491,6 +517,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F5B0BF61F90616E00DE967F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Fabric.framework/run\" 58e7e779ba7b01ef1111b7eddedf2f7bc95c682f d48b25842a32d4a7063d1a8404670a9643eb82c8e24967987fa0c57a14b15031";
+		};
 		2F74AE9D190F7E31005A3EB8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,8 +648,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gregory Lee (CGGM2TJZ65)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -632,7 +671,7 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8BBF15E8-7D63-4D63-BACC-F34DD48EC8BD";
+				PROVISIONING_PROFILE = "8309a7d2-3be2-435d-851b-84d340f17a02";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -655,8 +694,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gregory Lee (CGGM2TJZ65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -671,7 +710,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "8BBF15E8-7D63-4D63-BACC-F34DD48EC8BD";
+				PROVISIONING_PROFILE = "8309a7d2-3be2-435d-851b-84d340f17a02";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -684,7 +723,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gregory Lee (8G3M422BMR)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gregory Lee (8G3M422BMR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -695,7 +735,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-148oak.glee.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bfdf7e80-dea7-4586-819d-b285ad8f75a1";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -707,7 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gregory Lee (CGGM2TJZ65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -718,7 +759,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-148oak.glee.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "74a588e0-6fb0-426f-bc22-ffc9f3ca7997";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
