@@ -100,6 +100,15 @@
     [self updateFavoriteButtonColor];
 }
 
+- (void)displayUrl:(NSURL *)url {
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:NULL];
+    }else{
+        // Fallback on earlier versions
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
@@ -174,6 +183,13 @@
         link = self.run.shuttleLinks[indexPath.row];
     }*/
     return link;
+}
+        
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString * link = [self getLink:indexPath][LINK];
+    [self displayUrl:[NSURL URLWithString:link]];
 }
 
 @end
