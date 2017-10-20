@@ -732,7 +732,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dreamflows/Supporting Files/Dreamflows-Prefix.pch";
 				INFOPLIST_FILE = "Dreamflows/Supporting Files/Dreamflows-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "-148oak.glee.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -756,7 +756,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dreamflows/Supporting Files/Dreamflows-Prefix.pch";
 				INFOPLIST_FILE = "Dreamflows/Supporting Files/Dreamflows-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "-148oak.glee.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
