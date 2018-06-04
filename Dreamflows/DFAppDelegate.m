@@ -24,7 +24,6 @@ void onUncaughtException(NSException *exception)
     
     [[UITabBar appearance] setTintColor:[InterfaceViewVariables titleBarColor]];
     [[UINavigationBar appearance] setBarTintColor:[InterfaceViewVariables titleBarColor]];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTintColor:[InterfaceViewVariables DFWhite]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [InterfaceViewVariables DFWhite], NSForegroundColorAttributeName,
@@ -89,7 +88,7 @@ void onUncaughtException(NSException *exception)
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;

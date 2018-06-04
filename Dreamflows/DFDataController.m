@@ -87,7 +87,7 @@
 - (void)saveDataInContext:(void(^)(NSManagedObjectContext *context))saveBlock
 {
     //Create a new managed object context
-	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
+	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [context setPersistentStoreCoordinator:[(DFAppDelegate *)[[UIApplication sharedApplication] delegate] persistentStoreCoordinator]];	//step 1
     //Set the merge policy
 	[context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];				//step 2
