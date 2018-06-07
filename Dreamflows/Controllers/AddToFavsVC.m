@@ -136,8 +136,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"RunFav";
-    UITableViewCell *rawCell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *rawCell = [self.tableView dequeueReusableCellWithIdentifier:@"RunFav"];
     
     Run *run;
     if (tableView == self.searchDisplayController.searchResultsTableView) {

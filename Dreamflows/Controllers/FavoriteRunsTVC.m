@@ -57,8 +57,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"RunFav";
-    UITableViewCell *rawCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *rawCell = [tableView dequeueReusableCellWithIdentifier:@"RunFav" forIndexPath:indexPath];
     
     if([rawCell isKindOfClass:[RunCell class]]) {
         RunCell *cell = (RunCell *) rawCell;
