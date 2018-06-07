@@ -72,8 +72,8 @@
 
 +(NSString *) parseGageName: (NSString *) rawGageString {
     //Parse Gage Name
-    NSString * riverName = [self stringBetweenStrings:rawGageString startingFrom:@"class='River'>" endingAt:@"</a>"];
-    NSString * placeName = [self stringBetweenStrings:rawGageString startingFrom:@"class='Place'>" endingAt:@"</a>"];
+    NSString * riverName = [self stringBetweenStrings:rawGageString startingFrom:@"class='River' title='Gauge and reach info'>" endingAt:@"</a>"];
+    NSString * placeName = [self stringBetweenStrings:rawGageString startingFrom:@"class='Place' title='Flow graph'>" endingAt:@"</a>"];
     if(!placeName) {
         placeName = [self stringBetweenStrings:rawGageString startingFrom:@"</a></td><td>&nbsp;&nbsp;</td><td>" endingAt:@"<"];
     }

@@ -186,7 +186,7 @@
 #define NUM_UNPARSEABLE_GAGES 4 //The 4 nevada rivers
 -(void) addGages:(NSString *) gageWebsite withContext:(NSManagedObjectContext *) context{
     NSLog(@"Entering gages into database %@", [DFParser currentTime]);
-    NSArray * splitByGage = [gageWebsite componentsSeparatedByString:@"Gauge and reach info"];
+    NSArray * splitByGage = [gageWebsite componentsSeparatedByString:@"<td class='RivCol'>"];
     
     for(int i = 1; i < [splitByGage count]; i++) {
         [self addGageToDB:splitByGage[i] withNumber:i withContext:context];
