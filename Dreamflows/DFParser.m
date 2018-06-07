@@ -75,7 +75,7 @@
     NSString * riverName = [self stringBetweenStrings:rawGageString startingFrom:@"class='River' title='Gauge and reach info'>" endingAt:@"</a>"];
     NSString * placeName = [self stringBetweenStrings:rawGageString startingFrom:@"class='Place' title='Flow graph'>" endingAt:@"</a>"];
     if(!placeName) {
-        placeName = [self stringBetweenStrings:rawGageString startingFrom:@"</a></td><td>&nbsp;&nbsp;</td><td>" endingAt:@"<"];
+        placeName = [self stringBetweenStrings:rawGageString startingFrom:@"<td class='PlcCol'>" endingAt:@"<"];
     }
     return [NSString stringWithFormat:@"%@ - %@", riverName, placeName];
 }
@@ -86,7 +86,8 @@
     NSString * graphLink = @"";
     if(graphRange.length > 0) {
         NSString * tempGraphLink = [rawGageString substringFromIndex:graphRange.location];
-        graphLink = [tempGraphLink substringToIndex:[tempGraphLink rangeOfString:@"'"].location];
+        NSString * shortGraphLink = [tempGraphLink substringToIndex:[tempGraphLink rangeOfString:@"'"].location];
+        graphLink = [NSString stringWithFormat:@"http://%@", shortGraphLink];
     } else {
         NSLog(@"In %@ %@, error no graph link for %@",NSStringFromClass([self class]), NSStringFromSelector(_cmd), [self parseGageName:rawGageString]);
     }
