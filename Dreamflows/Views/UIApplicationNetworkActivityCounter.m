@@ -3,7 +3,6 @@
 #import "UIApplicationNetworkActivityCounter.h"
 @interface UIApplicationNetworkActivityCounter ()
 @property (nonatomic) int networkCounter;
-@property dispatch_queue_t counterQueue;
 
 @end
 
@@ -13,13 +12,12 @@
     self = [super init];
     if(self) {
         self.networkCounter = 0;
-        self.counterQueue = dispatch_queue_create("counter queue", NULL);
     }
     return self;
 }
 
 - (void) setNetworkActivityIndicatorVisible:(BOOL)networkActivityIndicatorVisible {
-    dispatch_async(self.counterQueue, ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         if(networkActivityIndicatorVisible) {
             self.networkCounter++;
             NSLog(@"Network counter: %d", self.networkCounter);

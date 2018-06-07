@@ -82,7 +82,7 @@
 
 +(NSString *) parseGraphLink:(NSString *) rawGageString {
     //Parse Graph Link
-    NSRange graphRange = [rawGageString rangeOfString:@"http://www.dreamflows.com/graphs/"];  //Split by this graph link base string
+    NSRange graphRange = [rawGageString rangeOfString:@"www.dreamflows.com/graphs/"];  //Split by this graph link base string
     NSString * graphLink = @"";
     if(graphRange.length > 0) {
         NSString * tempGraphLink = [rawGageString substringFromIndex:graphRange.location];
